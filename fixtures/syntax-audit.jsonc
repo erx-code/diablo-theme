@@ -1,0 +1,12 @@
+{
+  // A muted JSONC comment: true, null, "name", 100.
+  "name": "Linarian",
+  "essence": 100,
+  "alive": true,
+  "paused": false,
+  "target": null,
+  /* A muted block comment. */
+  "nested": { "name": "bone", "list": [1, 2, null] },
+  "escaped": "line\ntext",
+  "escaped\u004Bey": "value",
+}

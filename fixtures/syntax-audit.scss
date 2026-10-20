@@ -1,0 +1,30 @@
+// SCSS comment: $name, #ffffff, @mixin
+/// SassDoc comment: @param {Number} $size - ritual size.
+$name: "ritual";
+$size: 2.5rem;
+$palette: (bone: #ffffff, ash: rgb(30, 30, 30));
+
+@mixin ritual-button($gap: 10px) {
+  color: var(--custom-property);
+  gap: $gap;
+  @content;
+}
+@function double-size($value) {
+  @return $value * 2;
+}
+.btn {
+  @include ritual-button($size);
+  --custom-property: 10px;
+  width: double-size($size);
+  background: hsl(0, 0%, 20%);
+  content: "Cast #{$name}";
+  &:hover, &:disabled { opacity: .5; }
+  .#{$name}-child { padding: $size; }
+  &__label { display: inline-flex; }
+}
+
+@layer components {
+  .utilities {
+    @apply flex h-10 w-max cursor-pointer items-center justify-center gap-2.5;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Linarian",
+  "essence": 100,
+  "damage": 25.5,
+  "alive": true,
+  "paused": false,
+  "target": null,
+  "nested": { "name": "bone", "list": [1, 2, null] },
+  "escaped": "line\ntext",
+  "escaped\u004Bey": "value",
+  "deep": { "a": { "b": { "c": { "d": { "e": { "f": { "g": "value" } } } } } } }
+}

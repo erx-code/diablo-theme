@@ -1,0 +1,26 @@
+/* CSS comment: --bone, #ffffff, var() */
+@import "tailwindcss";
+@theme {
+  --color-bone: #ffffff;
+  --spacing-ritual: 2.5rem;
+}
+:root {
+  --custom-property: 10px;
+  --color-ash: rgb(30 30 30 / 50%);
+}
+@layer components {
+  .btn, #ritual:hover, button:disabled {
+    @apply flex h-10 w-max cursor-pointer items-center justify-center gap-2.5;
+    color: var(--color-bone);
+    width: calc(100% - var(--custom-property));
+    background: hsl(0 0% 20%);
+    border: 1px solid #ffffff;
+    content: "Cast Ritual";
+    font-family: 'Linarian', sans-serif;
+    display: flex;
+    opacity: .5;
+  }
+}
+@media (min-width: 40rem) {
+  .btn[data-state="casting"] { transform: translateX(2px); }
+}

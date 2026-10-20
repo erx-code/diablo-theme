@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!-- HTML comment: <button class="ritual">100</button> -->
+<html lang="en">
+  <head><title>Linarian</title></head>
+  <body>
+    <button class="btn flex h-10" id='ritual' disabled data-state="casting">
+      Cast Ritual &amp; Bone
+    </button>
+    <p>Essence: 100 &#x26; &#38;</p>
+    <img src="bone.png" alt="Linarian" />
+    <style>
+      .embedded:hover { color: var(--custom-property); margin: 10px; }
+    </style>
+    <script>
+      const essence = 100;
+      const castRitual = () => "casting";
+    </script>
+    <div style="color: rgb(30 30 30); padding: 10px" onclick="castRitual()">Ready</div>
+  </body>
+</html>

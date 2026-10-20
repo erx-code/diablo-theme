@@ -5,7 +5,9 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "build": "node --experimental-strip-types src/build.ts"
+    "build": "node --experimental-strip-types src/build.ts",
+    "test": "npm run build && node --experimental-strip-types --test tests/theme.test.ts",
+    "test:syntax": "npm run build && node --experimental-strip-types --test tests/syntax.test.ts"
   },
   "engines": {
     "vscode": "^1.140.0"

@@ -36,11 +36,19 @@ JSON вместе с исходниками. Повторная сборка п�
 ## Проверки подсветки
 
 ```sh
+npm run build:check
 npm test
 npm run test:syntax
 ```
 
+`npm run build:check` ничего не записывает: сравнивает результат из исходников
+и JSON в `themes/` с независимыми [baseline-файлами](tests/baselines/README.md).
+Сравнение включает все цвета, semantic tokens, порядок TextMate rules/selectors,
+fontStyle и точные байты JSON обеих тем. Baseline не обновляется сборкой.
+При миграции архитектуры он должен оставаться неизменным.
+
 `npm test` проверяет генерацию, палитру, selectors и конфликтующие дубликаты.
+Также проверяет baseline и способность проверки обнаруживать изменения.
 `npm run test:syntax` проверяет реальные TextMate/Oniguruma и TypeScript semantic
 tokens установленного VS Code на файлах `fixtures/syntax-audit.*`.
 Зависимости не устанавливаются. При нестандартном расположении редактора задайте

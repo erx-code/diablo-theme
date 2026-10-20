@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "node --experimental-strip-types src/build.ts",
-    "test": "npm run build && node --experimental-strip-types --test tests/theme.test.ts",
+    "build:check": "node --experimental-strip-types tests/build-check.ts",
+    "test": "npm run build && node --experimental-strip-types --test tests/theme.test.ts tests/baseline.test.ts && npm run build:check",
     "test:syntax": "npm run build && node --experimental-strip-types --test tests/syntax.test.ts"
   },
   "engines": {

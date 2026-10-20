@@ -1,0 +1,16 @@
+{
+  "name": "Necromancer Light",
+  "type": "light",
+  "colors": {
+    "editor.background": "#F2EDE3",
+    "editor.foreground": "#302D2C",
+    "sideBar.background": "#EDE5D9",
+    "panel.background": "#EDE5D9",
+    "editor.lineHighlightBackground": "#E8E0D4",
+    "panel.border": "#D8CFC2",
+    "activityBar.background": "#EDE5D9",
+    "editor.selectionBackground": "#D8B7B9",
+    "editorCursor.foreground": "#912D3B"
+  },
+  "tokenColors": []
+}

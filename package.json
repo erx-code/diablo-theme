@@ -1,0 +1,30 @@
+{
+  "name": "diablo-theme",
+  "displayName": "Diablo Theme",
+  "description": "Diablo-inspired color themes for Visual Studio Code",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "build": "node --experimental-strip-types src/build.ts"
+  },
+  "engines": {
+    "vscode": "^1.140.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Necromancer Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Necromancer Dark-color-theme.json"
+      },
+      {
+        "label": "Necromancer Light",
+        "uiTheme": "vs",
+        "path": "./themes/Necromancer Light-color-theme.json"
+      }
+    ]
+  }
+}

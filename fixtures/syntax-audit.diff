@@ -1,0 +1,23 @@
+diff --git a/ritual.ts b/ritual.ts
+index 1234567..abcdef0 100644
+--- a/ritual.ts
++++ b/ritual.ts
+@@ -1,2 +1,2 @@
+ unchanged ritual
+-const essence = 25;
++const essence = 100;
+
+*** ritual-old.ts
+--- ritual-new.ts
+***************
+*** 1,2 ****
+! old ritual changed
+--- 1,2 ----
+! new ritual changed
+
+1c1
+< old normal diff
+---
+> new normal diff
+
+# Diff comment

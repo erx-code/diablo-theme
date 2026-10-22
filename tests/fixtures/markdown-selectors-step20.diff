@@ -1,0 +1,66 @@
+--- tests/baselines/necromancer-dark.json
++++ themes/Necromancer Dark-color-theme.json
+@@ -325,7 +325,7 @@
+       "name": "Markdown - Plain",
+       "scope": [
+         "text.html.markdown",
+-        "punctuation.definition.list_item.markdown"
++        "text.html.markdown punctuation.definition.list.begin.markdown"
+       ],
+       "settings": {
+         "foreground": "#D8CBB8"
+@@ -334,7 +334,7 @@
+     {
+       "name": "Markdown - Markup Raw Inline",
+       "scope": [
+-        "text.html.markdown markup.inline.raw.markdown"
++        "text.html.markdown markup.inline.raw.string.markdown"
+       ],
+       "settings": {
+         "foreground": "#A8B59A"
+@@ -343,7 +343,7 @@
+     {
+       "name": "Markdown - Markup Raw Inline Punctuation",
+       "scope": [
+-        "text.html.markdown markup.inline.raw.markdown punctuation.definition.raw.markdown"
++        "text.html.markdown markup.inline.raw.string.markdown punctuation.definition.raw.markdown"
+       ],
+       "settings": {
+         "foreground": "#777F86"
+@@ -352,8 +352,7 @@
+     {
+       "name": "Markdown - Heading",
+       "scope": [
+-        "markdown.heading",
+-        "markup.heading | markup.heading entity.name",
++        "text.html.markdown markup.heading.markdown entity.name.section.markdown",
+         "markup.heading.markdown punctuation.definition.heading.markdown"
+       ],
+       "settings": {
+@@ -409,7 +408,7 @@
+     {
+       "name": "Markdown - Blockquote",
+       "scope": [
+-        "markup.quote punctuation.definition.blockquote.markdown"
++        "text.html.markdown markup.quote.markdown punctuation.definition.quote.begin.markdown"
+       ],
+       "settings": {
+         "foreground": "#777F86"
+@@ -481,7 +480,7 @@
+     {
+       "name": "Markdown - Fenced Bode Block Variable",
+       "scope": [
+-        "markup.raw.block.fenced.markdown",
++        "text.html.markdown markup.fenced_code.block.markdown",
+         "variable.language.fenced.markdown",
+         "punctuation.section.class.end"
+       ],
+@@ -492,7 +491,7 @@
+     {
+       "name": "Markdown - Fenced Language",
+       "scope": [
+-        "variable.language.fenced.markdown"
++        "text.html.markdown fenced_code.block.language.markdown"
+       ],
+       "settings": {
+         "foreground": "#777F86"

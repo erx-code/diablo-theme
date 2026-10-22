@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Markdown - Plain",
+    "before": ["text.html.markdown", "punctuation.definition.list_item.markdown"],
+    "after": ["text.html.markdown", "text.html.markdown punctuation.definition.list.begin.markdown"]
+  },
+  {
+    "name": "Markdown - Markup Raw Inline",
+    "before": ["text.html.markdown markup.inline.raw.markdown"],
+    "after": ["text.html.markdown markup.inline.raw.string.markdown"]
+  },
+  {
+    "name": "Markdown - Markup Raw Inline Punctuation",
+    "before": ["text.html.markdown markup.inline.raw.markdown punctuation.definition.raw.markdown"],
+    "after": ["text.html.markdown markup.inline.raw.string.markdown punctuation.definition.raw.markdown"]
+  },
+  {
+    "name": "Markdown - Heading",
+    "before": ["markdown.heading", "markup.heading | markup.heading entity.name", "markup.heading.markdown punctuation.definition.heading.markdown"],
+    "after": ["text.html.markdown markup.heading.markdown entity.name.section.markdown", "markup.heading.markdown punctuation.definition.heading.markdown"]
+  },
+  {
+    "name": "Markdown - Blockquote",
+    "before": ["markup.quote punctuation.definition.blockquote.markdown"],
+    "after": ["text.html.markdown markup.quote.markdown punctuation.definition.quote.begin.markdown"]
+  },
+  {
+    "name": "Markdown - Fenced Bode Block Variable",
+    "before": ["markup.raw.block.fenced.markdown", "variable.language.fenced.markdown", "punctuation.section.class.end"],
+    "after": ["text.html.markdown markup.fenced_code.block.markdown", "variable.language.fenced.markdown", "punctuation.section.class.end"]
+  },
+  {
+    "name": "Markdown - Fenced Language",
+    "before": ["variable.language.fenced.markdown"],
+    "after": ["text.html.markdown fenced_code.block.language.markdown"]
+  }
+]

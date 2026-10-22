@@ -6,12 +6,62 @@ import { fileURLToPath } from 'node:url';
 import test, { after } from 'node:test';
 import { gitColors, necromancerDark, palette } from '../src/palettes/necromancer-dark.ts';
 import { loadVSCodeTools } from './vscode-tools.ts';
+import { registerMarkdownDiffTests } from './markdown-diff.ts';
+import { registerMarkdownEmbeddedTests } from './markdown-embedded.ts';
 
 const tools = loadVSCodeTools();
 const { tm, onig, ts } = tools;
+
+test('Color utilities: TypeScript enforces validated RGB/RGBA brands', () => {
+  const typesPath = fileURLToPath(new URL('../src/color/types.ts', import.meta.url));
+  const alphaPath = fileURLToPath(new URL('../src/color/alpha.ts', import.meta.url));
+  const themePath = fileURLToPath(new URL('../src/palettes/necromancer-dark.ts', import.meta.url));
+  const contractPath = join(tools.extracted, 'color-contract.ts');
+  const contract = `
+    import { rgb, rgba, parseColor } from ${JSON.stringify(typesPath)};
+    import type { RGB, RGBA, Color } from ${JSON.stringify(typesPath)};
+    import { withAlpha } from ${JSON.stringify(alphaPath)};
+    import { necromancerDark, gitPalette } from ${JSON.stringify(themePath)};
+    const gitOverlay: RGBA = gitPalette.insertedText;
+    const shadow: RGBA = necromancerDark.colors['scrollbar.shadow'];
+    const opaque: RGB = rgb('#242424');
+    const transparent: RGBA = withAlpha(opaque, 0.5);
+    const parsed: Color = parseColor('#242424CC');
+    // @ts-expect-error Raw strings do not carry a validated RGB brand.
+    const unchecked: RGB = '#242424';
+    // @ts-expect-error Raw strings do not carry a validated RGBA brand.
+    const uncheckedAlpha: RGBA = '#242424CC';
+    // @ts-expect-error RGB and RGBA are distinct brands.
+    const incompatible: RGB = transparent;
+    // @ts-expect-error withAlpha accepts only validated RGB, not a raw string.
+    withAlpha('#242424', 0.5);
+    // @ts-expect-error An existing RGBA cannot receive alpha again.
+    withAlpha(rgba('#242424CC'), 0.5);
+    // @ts-expect-error A union must be narrowed before attaching alpha.
+    withAlpha(parsed, 0.5);
+    // @ts-expect-error Opacity must be numeric.
+    withAlpha(opaque, '0.5');
+  `;
+  const options = { noEmit: true, strict: true, target: ts.ScriptTarget.ES2022,
+    module: ts.ModuleKind.NodeNext, moduleResolution: ts.ModuleResolutionKind.NodeNext,
+    allowImportingTsExtensions: true };
+  const host = ts.createCompilerHost(options);
+  const getSourceFile = host.getSourceFile.bind(host);
+  host.getSourceFile = (file: string, languageVersion: any, ...rest: any[]) => file === contractPath
+    ? ts.createSourceFile(file, contract, languageVersion, true)
+    : getSourceFile(file, languageVersion, ...rest);
+  const program = ts.createProgram([contractPath], options, host);
+  const diagnostics = ts.getPreEmitDiagnostics(program);
+  assert.equal(diagnostics.length, 0, ts.formatDiagnosticsWithColorAndContext(diagnostics, {
+    getCanonicalFileName: (file: string) => file, getCurrentDirectory: () => '', getNewLine: () => '\n',
+  }));
+});
+
 await onig.loadWASM(tools.wasm);
 after(() => rmSync(tools.extracted, { recursive: true, force: true }));
 console.log(`Testing actual TextMate, Oniguruma and TypeScript from VS Code ${tools.version}; this is not a visual UI test.`);
+registerMarkdownDiffTests(tools);
+registerMarkdownEmbeddedTests(tools);
 
 const definitions = [
   ['ts', 'source.ts', 'typescript', 'typescript-basics', 'TypeScript'],

@@ -1,0 +1,3259 @@
+{
+  "vscodeVersion": "1.142.0",
+  "fixtures": [
+    {
+      "file": "syntax-audit.md",
+      "rootScope": "text.html.markdown",
+      "grammarSha256": "e1f1a3960a2e7582943cc18245428662f777cac609338d78c53f9ba7c469d5ff",
+      "tokens": [
+        {
+          "line": 1,
+          "start": 0,
+          "end": 1,
+          "text": "#",
+          "scopes": [
+            "text.html.markdown",
+            "markup.heading.markdown",
+            "heading.1.markdown",
+            "punctuation.definition.heading.markdown"
+          ],
+          "foreground": "#E0D4C2",
+          "foregroundRule": {
+            "index": 6,
+            "name": "Markdown - Heading"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 1,
+          "start": 1,
+          "end": 2,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.heading.markdown",
+            "heading.1.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 1,
+          "start": 2,
+          "end": 13,
+          "text": "Heading One",
+          "scopes": [
+            "text.html.markdown",
+            "markup.heading.markdown",
+            "heading.1.markdown",
+            "entity.name.section.markdown"
+          ],
+          "foreground": "#E0D4C2",
+          "foregroundRule": {
+            "index": 6,
+            "name": "Markdown - Heading"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 3,
+          "start": 0,
+          "end": 2,
+          "text": "##",
+          "scopes": [
+            "text.html.markdown",
+            "markup.heading.markdown",
+            "heading.2.markdown",
+            "punctuation.definition.heading.markdown"
+          ],
+          "foreground": "#E0D4C2",
+          "foregroundRule": {
+            "index": 6,
+            "name": "Markdown - Heading"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 3,
+          "start": 2,
+          "end": 3,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.heading.markdown",
+            "heading.2.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 3,
+          "start": 3,
+          "end": 14,
+          "text": "Heading Two",
+          "scopes": [
+            "text.html.markdown",
+            "markup.heading.markdown",
+            "heading.2.markdown",
+            "entity.name.section.markdown"
+          ],
+          "foreground": "#E0D4C2",
+          "foregroundRule": {
+            "index": 6,
+            "name": "Markdown - Heading"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 5,
+          "start": 0,
+          "end": 3,
+          "text": "###",
+          "scopes": [
+            "text.html.markdown",
+            "markup.heading.markdown",
+            "heading.3.markdown",
+            "punctuation.definition.heading.markdown"
+          ],
+          "foreground": "#E0D4C2",
+          "foregroundRule": {
+            "index": 6,
+            "name": "Markdown - Heading"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 5,
+          "start": 3,
+          "end": 4,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.heading.markdown",
+            "heading.3.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 5,
+          "start": 4,
+          "end": 17,
+          "text": "Heading Three",
+          "scopes": [
+            "text.html.markdown",
+            "markup.heading.markdown",
+            "heading.3.markdown",
+            "entity.name.section.markdown"
+          ],
+          "foreground": "#E0D4C2",
+          "foregroundRule": {
+            "index": 6,
+            "name": "Markdown - Heading"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 7,
+          "start": 0,
+          "end": 4,
+          "text": "####",
+          "scopes": [
+            "text.html.markdown",
+            "markup.heading.markdown",
+            "heading.4.markdown",
+            "punctuation.definition.heading.markdown"
+          ],
+          "foreground": "#E0D4C2",
+          "foregroundRule": {
+            "index": 6,
+            "name": "Markdown - Heading"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 7,
+          "start": 4,
+          "end": 5,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.heading.markdown",
+            "heading.4.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 7,
+          "start": 5,
+          "end": 17,
+          "text": "Heading Four",
+          "scopes": [
+            "text.html.markdown",
+            "markup.heading.markdown",
+            "heading.4.markdown",
+            "entity.name.section.markdown"
+          ],
+          "foreground": "#E0D4C2",
+          "foregroundRule": {
+            "index": 6,
+            "name": "Markdown - Heading"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 9,
+          "start": 0,
+          "end": 5,
+          "text": "#####",
+          "scopes": [
+            "text.html.markdown",
+            "markup.heading.markdown",
+            "heading.5.markdown",
+            "punctuation.definition.heading.markdown"
+          ],
+          "foreground": "#E0D4C2",
+          "foregroundRule": {
+            "index": 6,
+            "name": "Markdown - Heading"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 9,
+          "start": 5,
+          "end": 6,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.heading.markdown",
+            "heading.5.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 9,
+          "start": 6,
+          "end": 18,
+          "text": "Heading Five",
+          "scopes": [
+            "text.html.markdown",
+            "markup.heading.markdown",
+            "heading.5.markdown",
+            "entity.name.section.markdown"
+          ],
+          "foreground": "#E0D4C2",
+          "foregroundRule": {
+            "index": 6,
+            "name": "Markdown - Heading"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 11,
+          "start": 0,
+          "end": 6,
+          "text": "######",
+          "scopes": [
+            "text.html.markdown",
+            "markup.heading.markdown",
+            "heading.6.markdown",
+            "punctuation.definition.heading.markdown"
+          ],
+          "foreground": "#E0D4C2",
+          "foregroundRule": {
+            "index": 6,
+            "name": "Markdown - Heading"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 11,
+          "start": 6,
+          "end": 7,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.heading.markdown",
+            "heading.6.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 11,
+          "start": 7,
+          "end": 18,
+          "text": "Heading Six",
+          "scopes": [
+            "text.html.markdown",
+            "markup.heading.markdown",
+            "heading.6.markdown",
+            "entity.name.section.markdown"
+          ],
+          "foreground": "#E0D4C2",
+          "foregroundRule": {
+            "index": 6,
+            "name": "Markdown - Heading"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 13,
+          "start": 0,
+          "end": 10,
+          "text": "Setext One",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 14,
+          "start": 0,
+          "end": 10,
+          "text": "==========",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "markup.heading.setext.1.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 16,
+          "start": 0,
+          "end": 10,
+          "text": "Setext Two",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 17,
+          "start": 0,
+          "end": 10,
+          "text": "----------",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "markup.heading.setext.2.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 19,
+          "start": 0,
+          "end": 21,
+          "text": "Plain paragraph with ",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 19,
+          "start": 21,
+          "end": 22,
+          "text": "`",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "markup.inline.raw.string.markdown",
+            "punctuation.definition.raw.markdown"
+          ],
+          "foreground": "#777F86",
+          "foregroundRule": {
+            "index": 5,
+            "name": "Markdown - Markup Raw Inline Punctuation"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 19,
+          "start": 22,
+          "end": 35,
+          "text": "inline ritual",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "markup.inline.raw.string.markdown"
+          ],
+          "foreground": "#A8B59A",
+          "foregroundRule": {
+            "index": 4,
+            "name": "Markdown - Markup Raw Inline"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 19,
+          "start": 35,
+          "end": 36,
+          "text": "`",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "markup.inline.raw.string.markdown",
+            "punctuation.definition.raw.markdown"
+          ],
+          "foreground": "#777F86",
+          "foregroundRule": {
+            "index": 5,
+            "name": "Markdown - Markup Raw Inline Punctuation"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 19,
+          "start": 36,
+          "end": 53,
+          "text": " and a code span.",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 21,
+          "start": 0,
+          "end": 2,
+          "text": "**",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "markup.bold.markdown",
+            "punctuation.definition.bold.markdown"
+          ],
+          "foreground": "#C58F96",
+          "foregroundRule": {
+            "index": 8,
+            "name": "Markup - Bold"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 21,
+          "start": 2,
+          "end": 15,
+          "text": "Strong ritual",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "markup.bold.markdown"
+          ],
+          "foreground": "#C58F96",
+          "foregroundRule": {
+            "index": 8,
+            "name": "Markup - Bold"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 21,
+          "start": 15,
+          "end": 17,
+          "text": "**",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "markup.bold.markdown",
+            "punctuation.definition.bold.markdown"
+          ],
+          "foreground": "#C58F96",
+          "foregroundRule": {
+            "index": 8,
+            "name": "Markup - Bold"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 21,
+          "start": 17,
+          "end": 19,
+          "text": ", ",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 21,
+          "start": 19,
+          "end": 20,
+          "text": "*",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "markup.italic.markdown",
+            "punctuation.definition.italic.markdown"
+          ],
+          "foreground": "#C58F96",
+          "foregroundRule": {
+            "index": 7,
+            "name": "Markup - Italic"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 21,
+          "start": 20,
+          "end": 35,
+          "text": "Emphasis ritual",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "markup.italic.markdown"
+          ],
+          "foreground": "#C58F96",
+          "foregroundRule": {
+            "index": 7,
+            "name": "Markup - Italic"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 21,
+          "start": 35,
+          "end": 36,
+          "text": "*",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "markup.italic.markdown",
+            "punctuation.definition.italic.markdown"
+          ],
+          "foreground": "#C58F96",
+          "foregroundRule": {
+            "index": 7,
+            "name": "Markup - Italic"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 21,
+          "start": 36,
+          "end": 42,
+          "text": ", and ",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 21,
+          "start": 42,
+          "end": 44,
+          "text": "**",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "markup.bold.markdown",
+            "punctuation.definition.bold.markdown"
+          ],
+          "foreground": "#C58F96",
+          "foregroundRule": {
+            "index": 8,
+            "name": "Markup - Bold"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 21,
+          "start": 44,
+          "end": 45,
+          "text": "*",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "markup.bold.markdown",
+            "markup.italic.markdown",
+            "punctuation.definition.italic.markdown"
+          ],
+          "foreground": "#C58F96",
+          "foregroundRule": {
+            "index": 9,
+            "name": "Markup - Bold-Italic"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 21,
+          "start": 45,
+          "end": 60,
+          "text": "Combined ritual",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "markup.bold.markdown",
+            "markup.italic.markdown"
+          ],
+          "foreground": "#C58F96",
+          "foregroundRule": {
+            "index": 9,
+            "name": "Markup - Bold-Italic"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 21,
+          "start": 60,
+          "end": 61,
+          "text": "*",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "markup.bold.markdown",
+            "markup.italic.markdown",
+            "punctuation.definition.italic.markdown"
+          ],
+          "foreground": "#C58F96",
+          "foregroundRule": {
+            "index": 9,
+            "name": "Markup - Bold-Italic"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 21,
+          "start": 61,
+          "end": 63,
+          "text": "**",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "markup.bold.markdown",
+            "punctuation.definition.bold.markdown"
+          ],
+          "foreground": "#C58F96",
+          "foregroundRule": {
+            "index": 8,
+            "name": "Markup - Bold"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 21,
+          "start": 63,
+          "end": 64,
+          "text": ".",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 23,
+          "start": 0,
+          "end": 1,
+          "text": "[",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.inline.markdown",
+            "punctuation.definition.link.title.begin.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 23,
+          "start": 1,
+          "end": 14,
+          "text": "Inline ritual",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.inline.markdown",
+            "string.other.link.title.markdown"
+          ],
+          "foreground": "#C58F96",
+          "foregroundRule": {
+            "index": 13,
+            "name": "Markdown - Link"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 23,
+          "start": 14,
+          "end": 15,
+          "text": "]",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.inline.markdown",
+            "punctuation.definition.link.title.end.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 23,
+          "start": 15,
+          "end": 16,
+          "text": "(",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.inline.markdown",
+            "punctuation.definition.metadata.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 23,
+          "start": 16,
+          "end": 43,
+          "text": "https://example.test/ritual",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.inline.markdown",
+            "markup.underline.link.markdown"
+          ],
+          "foreground": "#AEB5BA",
+          "foregroundRule": {
+            "index": 10,
+            "name": "Markup - Underline"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 23,
+          "start": 43,
+          "end": 44,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.inline.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 23,
+          "start": 44,
+          "end": 45,
+          "text": "\"",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.inline.markdown",
+            "string.other.link.description.title.markdown",
+            "punctuation.definition.string.begin.markdown"
+          ],
+          "foreground": "#A8B59A",
+          "foregroundRule": {
+            "index": 14,
+            "name": "Markdown - Link Description"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 23,
+          "start": 45,
+          "end": 57,
+          "text": "Ritual title",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.inline.markdown",
+            "string.other.link.description.title.markdown"
+          ],
+          "foreground": "#A8B59A",
+          "foregroundRule": {
+            "index": 14,
+            "name": "Markdown - Link Description"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 23,
+          "start": 57,
+          "end": 58,
+          "text": "\"",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.inline.markdown",
+            "string.other.link.description.title.markdown",
+            "punctuation.definition.string.end.markdown"
+          ],
+          "foreground": "#A8B59A",
+          "foregroundRule": {
+            "index": 14,
+            "name": "Markdown - Link Description"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 23,
+          "start": 58,
+          "end": 59,
+          "text": ")",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.inline.markdown",
+            "punctuation.definition.metadata.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 25,
+          "start": 0,
+          "end": 1,
+          "text": "[",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.reference.markdown",
+            "punctuation.definition.link.title.begin.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 25,
+          "start": 1,
+          "end": 17,
+          "text": "Reference ritual",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.reference.markdown",
+            "string.other.link.title.markdown"
+          ],
+          "foreground": "#C58F96",
+          "foregroundRule": {
+            "index": 13,
+            "name": "Markdown - Link"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 25,
+          "start": 17,
+          "end": 18,
+          "text": "]",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.reference.markdown",
+            "punctuation.definition.link.title.end.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 25,
+          "start": 18,
+          "end": 19,
+          "text": "[",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.reference.markdown",
+            "punctuation.definition.constant.begin.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 25,
+          "start": 19,
+          "end": 25,
+          "text": "rathma",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.reference.markdown",
+            "constant.other.reference.link.markdown"
+          ],
+          "foreground": "#C58F96",
+          "foregroundRule": {
+            "index": 15,
+            "name": "Markdown - Link Anchor"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 25,
+          "start": 25,
+          "end": 26,
+          "text": "]",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.reference.markdown",
+            "punctuation.definition.constant.end.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 27,
+          "start": 0,
+          "end": 1,
+          "text": "[",
+          "scopes": [
+            "text.html.markdown",
+            "meta.link.reference.def.markdown",
+            "punctuation.definition.constant.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 27,
+          "start": 1,
+          "end": 7,
+          "text": "rathma",
+          "scopes": [
+            "text.html.markdown",
+            "meta.link.reference.def.markdown",
+            "constant.other.reference.link.markdown"
+          ],
+          "foreground": "#C58F96",
+          "foregroundRule": {
+            "index": 15,
+            "name": "Markdown - Link Anchor"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 27,
+          "start": 7,
+          "end": 8,
+          "text": "]",
+          "scopes": [
+            "text.html.markdown",
+            "meta.link.reference.def.markdown",
+            "punctuation.definition.constant.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 27,
+          "start": 8,
+          "end": 9,
+          "text": ":",
+          "scopes": [
+            "text.html.markdown",
+            "meta.link.reference.def.markdown",
+            "punctuation.separator.key-value.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 27,
+          "start": 9,
+          "end": 10,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "meta.link.reference.def.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 27,
+          "start": 10,
+          "end": 40,
+          "text": "https://example.test/reference",
+          "scopes": [
+            "text.html.markdown",
+            "meta.link.reference.def.markdown",
+            "markup.underline.link.markdown"
+          ],
+          "foreground": "#AEB5BA",
+          "foregroundRule": {
+            "index": 10,
+            "name": "Markup - Underline"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 27,
+          "start": 40,
+          "end": 41,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "meta.link.reference.def.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 27,
+          "start": 41,
+          "end": 42,
+          "text": "\"",
+          "scopes": [
+            "text.html.markdown",
+            "meta.link.reference.def.markdown",
+            "string.other.link.description.title.markdown",
+            "punctuation.definition.string.begin.markdown"
+          ],
+          "foreground": "#A8B59A",
+          "foregroundRule": {
+            "index": 14,
+            "name": "Markdown - Link Description"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 27,
+          "start": 42,
+          "end": 57,
+          "text": "Reference title",
+          "scopes": [
+            "text.html.markdown",
+            "meta.link.reference.def.markdown",
+            "string.other.link.description.title.markdown"
+          ],
+          "foreground": "#A8B59A",
+          "foregroundRule": {
+            "index": 14,
+            "name": "Markdown - Link Description"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 27,
+          "start": 57,
+          "end": 58,
+          "text": "\"",
+          "scopes": [
+            "text.html.markdown",
+            "meta.link.reference.def.markdown",
+            "string.other.link.description.title.markdown",
+            "punctuation.definition.string.end.markdown"
+          ],
+          "foreground": "#A8B59A",
+          "foregroundRule": {
+            "index": 14,
+            "name": "Markdown - Link Description"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 29,
+          "start": 0,
+          "end": 10,
+          "text": "Autolink: ",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 29,
+          "start": 10,
+          "end": 11,
+          "text": "<",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.inet.markdown",
+            "punctuation.definition.link.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 29,
+          "start": 11,
+          "end": 41,
+          "text": "https://example.test/automatic",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.inet.markdown",
+            "markup.underline.link.markdown"
+          ],
+          "foreground": "#AEB5BA",
+          "foregroundRule": {
+            "index": 10,
+            "name": "Markup - Underline"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 29,
+          "start": 41,
+          "end": 42,
+          "text": ">",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown",
+            "meta.link.inet.markdown",
+            "punctuation.definition.link.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 31,
+          "start": 0,
+          "end": 35,
+          "text": "Bare URL: https://example.test/bare",
+          "scopes": [
+            "text.html.markdown",
+            "meta.paragraph.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 33,
+          "start": 0,
+          "end": 1,
+          "text": ">",
+          "scopes": [
+            "text.html.markdown",
+            "markup.quote.markdown",
+            "punctuation.definition.quote.begin.markdown"
+          ],
+          "foreground": "#777F86",
+          "foregroundRule": {
+            "index": 11,
+            "name": "Markdown - Blockquote"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 33,
+          "start": 1,
+          "end": 2,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.quote.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 33,
+          "start": 2,
+          "end": 15,
+          "text": "Quoted ritual",
+          "scopes": [
+            "text.html.markdown",
+            "markup.quote.markdown",
+            "meta.paragraph.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 34,
+          "start": 0,
+          "end": 1,
+          "text": ">",
+          "scopes": [
+            "text.html.markdown",
+            "markup.quote.markdown",
+            "punctuation.definition.quote.begin.markdown"
+          ],
+          "foreground": "#777F86",
+          "foregroundRule": {
+            "index": 11,
+            "name": "Markdown - Blockquote"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 35,
+          "start": 0,
+          "end": 1,
+          "text": ">",
+          "scopes": [
+            "text.html.markdown",
+            "markup.quote.markdown",
+            "punctuation.definition.quote.begin.markdown"
+          ],
+          "foreground": "#777F86",
+          "foregroundRule": {
+            "index": 11,
+            "name": "Markdown - Blockquote"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 35,
+          "start": 1,
+          "end": 2,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.quote.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 35,
+          "start": 2,
+          "end": 21,
+          "text": "A second paragraph.",
+          "scopes": [
+            "text.html.markdown",
+            "markup.quote.markdown",
+            "meta.paragraph.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 37,
+          "start": 0,
+          "end": 1,
+          "text": "-",
+          "scopes": [
+            "text.html.markdown",
+            "markup.list.unnumbered.markdown",
+            "punctuation.definition.list.begin.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 37,
+          "start": 1,
+          "end": 2,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.list.unnumbered.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 37,
+          "start": 2,
+          "end": 18,
+          "text": "Unordered ritual",
+          "scopes": [
+            "text.html.markdown",
+            "markup.list.unnumbered.markdown",
+            "meta.paragraph.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 38,
+          "start": 0,
+          "end": 1,
+          "text": "-",
+          "scopes": [
+            "text.html.markdown",
+            "markup.list.unnumbered.markdown",
+            "punctuation.definition.list.begin.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 38,
+          "start": 1,
+          "end": 2,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.list.unnumbered.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 38,
+          "start": 2,
+          "end": 14,
+          "text": "Another item",
+          "scopes": [
+            "text.html.markdown",
+            "markup.list.unnumbered.markdown",
+            "meta.paragraph.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 40,
+          "start": 0,
+          "end": 2,
+          "text": "1.",
+          "scopes": [
+            "text.html.markdown",
+            "markup.list.numbered.markdown",
+            "punctuation.definition.list.begin.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 40,
+          "start": 2,
+          "end": 3,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.list.numbered.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 40,
+          "start": 3,
+          "end": 17,
+          "text": "Ordered ritual",
+          "scopes": [
+            "text.html.markdown",
+            "markup.list.numbered.markdown",
+            "meta.paragraph.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 41,
+          "start": 0,
+          "end": 2,
+          "text": "2.",
+          "scopes": [
+            "text.html.markdown",
+            "markup.list.numbered.markdown",
+            "punctuation.definition.list.begin.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 41,
+          "start": 2,
+          "end": 3,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.list.numbered.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 41,
+          "start": 3,
+          "end": 24,
+          "text": "Another numbered item",
+          "scopes": [
+            "text.html.markdown",
+            "markup.list.numbered.markdown",
+            "meta.paragraph.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 3,
+            "name": "Markdown - Plain"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 43,
+          "start": 0,
+          "end": 1,
+          "text": "|",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown",
+            "punctuation.definition.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 43,
+          "start": 1,
+          "end": 2,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 43,
+          "start": 2,
+          "end": 6,
+          "text": "Name",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 43,
+          "start": 6,
+          "end": 7,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 43,
+          "start": 7,
+          "end": 8,
+          "text": "|",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown",
+            "punctuation.definition.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 43,
+          "start": 8,
+          "end": 9,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 43,
+          "start": 9,
+          "end": 16,
+          "text": "Essence",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 43,
+          "start": 16,
+          "end": 17,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 43,
+          "start": 17,
+          "end": 18,
+          "text": "|",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown",
+            "punctuation.definition.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 44,
+          "start": 0,
+          "end": 1,
+          "text": "|",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown",
+            "punctuation.definition.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 44,
+          "start": 1,
+          "end": 2,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 44,
+          "start": 2,
+          "end": 5,
+          "text": "---",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown",
+            "punctuation.separator.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 44,
+          "start": 5,
+          "end": 6,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 44,
+          "start": 6,
+          "end": 7,
+          "text": "|",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown",
+            "punctuation.definition.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 44,
+          "start": 7,
+          "end": 8,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 44,
+          "start": 8,
+          "end": 12,
+          "text": "---:",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown",
+            "punctuation.separator.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 44,
+          "start": 12,
+          "end": 13,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 44,
+          "start": 13,
+          "end": 14,
+          "text": "|",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown",
+            "punctuation.definition.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 45,
+          "start": 0,
+          "end": 1,
+          "text": "|",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown",
+            "punctuation.definition.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 45,
+          "start": 1,
+          "end": 2,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 45,
+          "start": 2,
+          "end": 8,
+          "text": "Rathma",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 45,
+          "start": 8,
+          "end": 9,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 45,
+          "start": 9,
+          "end": 10,
+          "text": "|",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown",
+            "punctuation.definition.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 45,
+          "start": 10,
+          "end": 11,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 45,
+          "start": 11,
+          "end": 14,
+          "text": "100",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 45,
+          "start": 14,
+          "end": 15,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 45,
+          "start": 15,
+          "end": 16,
+          "text": "|",
+          "scopes": [
+            "text.html.markdown",
+            "markup.table.markdown",
+            "punctuation.definition.table.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 22,
+            "name": "Markup - Table"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 47,
+          "start": 0,
+          "end": 3,
+          "text": "---",
+          "scopes": [
+            "text.html.markdown",
+            "meta.separator.markdown"
+          ],
+          "foreground": "#777F86",
+          "foregroundRule": {
+            "index": 21,
+            "name": "Markdown - Separator"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 49,
+          "start": 0,
+          "end": 3,
+          "text": "```",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "punctuation.definition.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 19,
+            "name": "Markdown - Fenced Bode Block Variable"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 50,
+          "start": 0,
+          "end": 17,
+          "text": "Unlabelled ritual",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 19,
+            "name": "Markdown - Fenced Bode Block Variable"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 51,
+          "start": 0,
+          "end": 3,
+          "text": "```",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "punctuation.definition.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 19,
+            "name": "Markdown - Fenced Bode Block Variable"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 53,
+          "start": 0,
+          "end": 3,
+          "text": "```",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "punctuation.definition.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 19,
+            "name": "Markdown - Fenced Bode Block Variable"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 53,
+          "start": 3,
+          "end": 13,
+          "text": "typescript",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "fenced_code.block.language.markdown"
+          ],
+          "foreground": "#777F86",
+          "foregroundRule": {
+            "index": 20,
+            "name": "Markdown - Fenced Language"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 54,
+          "start": 0,
+          "end": 5,
+          "text": "const",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts",
+            "storage.type.ts"
+          ],
+          "foreground": "#AEB5BA",
+          "foregroundRule": {
+            "index": 77,
+            "name": "Markdown embedded — Code — Keywords and modifiers"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 54,
+          "start": 5,
+          "end": 6,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 75,
+            "name": "Markdown embedded — Code — Identifier fallback"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 54,
+          "start": 6,
+          "end": 13,
+          "text": "essence",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts",
+            "meta.var-single-variable.expr.ts",
+            "meta.definition.variable.ts",
+            "variable.other.constant.ts"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 76,
+            "name": "Markdown embedded — Code — Variables, parameters, properties and enum members"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 54,
+          "start": 13,
+          "end": 14,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts",
+            "meta.var-single-variable.expr.ts"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 75,
+            "name": "Markdown embedded — Code — Identifier fallback"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 54,
+          "start": 14,
+          "end": 15,
+          "text": "=",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts",
+            "keyword.operator.assignment.ts"
+          ],
+          "foreground": "#AEB5BA",
+          "foregroundRule": {
+            "index": 77,
+            "name": "Markdown embedded — Code — Keywords and modifiers"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 54,
+          "start": 15,
+          "end": 16,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 75,
+            "name": "Markdown embedded — Code — Identifier fallback"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 54,
+          "start": 16,
+          "end": 19,
+          "text": "100",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts",
+            "constant.numeric.decimal.ts"
+          ],
+          "foreground": "#C9A18B",
+          "foregroundRule": {
+            "index": 83,
+            "name": "Markdown embedded — Code — Numeric literals and BigInt suffixes"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 54,
+          "start": 19,
+          "end": 20,
+          "text": ";",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "punctuation.terminator.statement.ts"
+          ],
+          "foreground": "#AEB5BA",
+          "foregroundRule": {
+            "index": 80,
+            "name": "Markdown embedded — Code — Operators and punctuation"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 55,
+          "start": 0,
+          "end": 5,
+          "text": "const",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts",
+            "storage.type.ts"
+          ],
+          "foreground": "#AEB5BA",
+          "foregroundRule": {
+            "index": 77,
+            "name": "Markdown embedded — Code — Keywords and modifiers"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 55,
+          "start": 5,
+          "end": 6,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 75,
+            "name": "Markdown embedded — Code — Identifier fallback"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 55,
+          "start": 6,
+          "end": 16,
+          "text": "castRitual",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts",
+            "meta.var-single-variable.expr.ts",
+            "meta.definition.variable.ts",
+            "variable.other.constant.ts",
+            "entity.name.function.ts"
+          ],
+          "foreground": "#C58F96",
+          "foregroundRule": {
+            "index": 79,
+            "name": "Markdown embedded — Code — Functions, methods and hooks"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 55,
+          "start": 16,
+          "end": 17,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts",
+            "meta.var-single-variable.expr.ts"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 75,
+            "name": "Markdown embedded — Code — Identifier fallback"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 55,
+          "start": 17,
+          "end": 18,
+          "text": "=",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts",
+            "keyword.operator.assignment.ts"
+          ],
+          "foreground": "#AEB5BA",
+          "foregroundRule": {
+            "index": 77,
+            "name": "Markdown embedded — Code — Keywords and modifiers"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 55,
+          "start": 18,
+          "end": 19,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts",
+            "meta.arrow.ts"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 75,
+            "name": "Markdown embedded — Code — Identifier fallback"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 55,
+          "start": 19,
+          "end": 20,
+          "text": "(",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts",
+            "meta.arrow.ts",
+            "meta.parameters.ts",
+            "punctuation.definition.parameters.begin.ts"
+          ],
+          "foreground": "#AEB5BA",
+          "foregroundRule": {
+            "index": 80,
+            "name": "Markdown embedded — Code — Operators and punctuation"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 55,
+          "start": 20,
+          "end": 21,
+          "text": ")",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts",
+            "meta.arrow.ts",
+            "meta.parameters.ts",
+            "punctuation.definition.parameters.end.ts"
+          ],
+          "foreground": "#AEB5BA",
+          "foregroundRule": {
+            "index": 80,
+            "name": "Markdown embedded — Code — Operators and punctuation"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 55,
+          "start": 21,
+          "end": 22,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts",
+            "meta.arrow.ts"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 75,
+            "name": "Markdown embedded — Code — Identifier fallback"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 55,
+          "start": 22,
+          "end": 24,
+          "text": "=>",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts",
+            "meta.arrow.ts",
+            "storage.type.function.arrow.ts"
+          ],
+          "foreground": "#AEB5BA",
+          "foregroundRule": {
+            "index": 77,
+            "name": "Markdown embedded — Code — Keywords and modifiers"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 55,
+          "start": 24,
+          "end": 25,
+          "text": " ",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts",
+            "meta.arrow.ts"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 75,
+            "name": "Markdown embedded — Code — Identifier fallback"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 55,
+          "start": 25,
+          "end": 26,
+          "text": "\"",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts",
+            "string.quoted.double.ts",
+            "punctuation.definition.string.begin.ts"
+          ],
+          "foreground": "#AEB5BA",
+          "foregroundRule": {
+            "index": 80,
+            "name": "Markdown embedded — Code — Operators and punctuation"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 55,
+          "start": 26,
+          "end": 33,
+          "text": "casting",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts",
+            "string.quoted.double.ts"
+          ],
+          "foreground": "#A8B59A",
+          "foregroundRule": {
+            "index": 81,
+            "name": "Markdown embedded — Code — String and template content"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 55,
+          "start": 33,
+          "end": 34,
+          "text": "\"",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.var.expr.ts",
+            "string.quoted.double.ts",
+            "punctuation.definition.string.end.ts"
+          ],
+          "foreground": "#AEB5BA",
+          "foregroundRule": {
+            "index": 80,
+            "name": "Markdown embedded — Code — Operators and punctuation"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 55,
+          "start": 34,
+          "end": 35,
+          "text": ";",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "punctuation.terminator.statement.ts"
+          ],
+          "foreground": "#AEB5BA",
+          "foregroundRule": {
+            "index": 80,
+            "name": "Markdown embedded — Code — Operators and punctuation"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 56,
+          "start": 0,
+          "end": 10,
+          "text": "castRitual",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.function-call.ts",
+            "entity.name.function.ts"
+          ],
+          "foreground": "#C58F96",
+          "foregroundRule": {
+            "index": 79,
+            "name": "Markdown embedded — Code — Functions, methods and hooks"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 56,
+          "start": 10,
+          "end": 11,
+          "text": "(",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.brace.round.ts"
+          ],
+          "foreground": "#AEB5BA",
+          "foregroundRule": {
+            "index": 80,
+            "name": "Markdown embedded — Code — Operators and punctuation"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 56,
+          "start": 11,
+          "end": 18,
+          "text": "essence",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "variable.other.readwrite.ts"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 76,
+            "name": "Markdown embedded — Code — Variables, parameters, properties and enum members"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 56,
+          "start": 18,
+          "end": 19,
+          "text": ")",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "meta.brace.round.ts"
+          ],
+          "foreground": "#AEB5BA",
+          "foregroundRule": {
+            "index": 80,
+            "name": "Markdown embedded — Code — Operators and punctuation"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 56,
+          "start": 19,
+          "end": 20,
+          "text": ";",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "meta.embedded.block.typescript",
+            "punctuation.terminator.statement.ts"
+          ],
+          "foreground": "#AEB5BA",
+          "foregroundRule": {
+            "index": 80,
+            "name": "Markdown embedded — Code — Operators and punctuation"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 57,
+          "start": 0,
+          "end": 3,
+          "text": "```",
+          "scopes": [
+            "text.html.markdown",
+            "markup.fenced_code.block.markdown",
+            "punctuation.definition.markdown"
+          ],
+          "foreground": "#D8CBB8",
+          "foregroundRule": {
+            "index": 19,
+            "name": "Markdown - Fenced Bode Block Variable"
+          },
+          "editorForegroundFallback": false
+        }
+      ]
+    },
+    {
+      "file": "syntax-audit.diff",
+      "rootScope": "source.diff",
+      "grammarSha256": "6949f1fb8e02db93cfc413090ecb94da02766bf7af69b0ddcb30ae223ecce2c1",
+      "tokens": [
+        {
+          "line": 1,
+          "start": 0,
+          "end": 34,
+          "text": "diff --git a/ritual.ts b/ritual.ts",
+          "scopes": [
+            "source.diff",
+            "meta.diff.header.git"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 2,
+          "start": 0,
+          "end": 29,
+          "text": "index 1234567..abcdef0 100644",
+          "scopes": [
+            "source.diff",
+            "meta.diff.index.git"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 3,
+          "start": 0,
+          "end": 3,
+          "text": "---",
+          "scopes": [
+            "source.diff",
+            "meta.diff.header.from-file",
+            "punctuation.definition.from-file.diff"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 3,
+          "start": 3,
+          "end": 15,
+          "text": " a/ritual.ts",
+          "scopes": [
+            "source.diff",
+            "meta.diff.header.from-file"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 4,
+          "start": 0,
+          "end": 3,
+          "text": "+++",
+          "scopes": [
+            "source.diff",
+            "meta.diff.header.to-file",
+            "punctuation.definition.to-file.diff"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 4,
+          "start": 3,
+          "end": 15,
+          "text": " b/ritual.ts",
+          "scopes": [
+            "source.diff",
+            "meta.diff.header.to-file"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 5,
+          "start": 0,
+          "end": 2,
+          "text": "@@",
+          "scopes": [
+            "source.diff",
+            "meta.diff.range.unified",
+            "punctuation.definition.range.diff"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 5,
+          "start": 2,
+          "end": 3,
+          "text": " ",
+          "scopes": [
+            "source.diff",
+            "meta.diff.range.unified"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 5,
+          "start": 3,
+          "end": 12,
+          "text": "-1,2 +1,2",
+          "scopes": [
+            "source.diff",
+            "meta.diff.range.unified",
+            "meta.toc-list.line-number.diff"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 5,
+          "start": 12,
+          "end": 13,
+          "text": " ",
+          "scopes": [
+            "source.diff",
+            "meta.diff.range.unified"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 5,
+          "start": 13,
+          "end": 15,
+          "text": "@@",
+          "scopes": [
+            "source.diff",
+            "meta.diff.range.unified",
+            "punctuation.definition.range.diff"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 6,
+          "start": 0,
+          "end": 17,
+          "text": " unchanged ritual",
+          "scopes": [
+            "source.diff"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 7,
+          "start": 0,
+          "end": 1,
+          "text": "-",
+          "scopes": [
+            "source.diff",
+            "markup.deleted.diff",
+            "punctuation.definition.deleted.diff"
+          ],
+          "foreground": "#FF5370",
+          "foregroundRule": {
+            "index": 1,
+            "name": "Deleted"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 7,
+          "start": 1,
+          "end": 20,
+          "text": "const essence = 25;",
+          "scopes": [
+            "source.diff",
+            "markup.deleted.diff"
+          ],
+          "foreground": "#FF5370",
+          "foregroundRule": {
+            "index": 1,
+            "name": "Deleted"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 8,
+          "start": 0,
+          "end": 1,
+          "text": "+",
+          "scopes": [
+            "source.diff",
+            "markup.inserted.diff",
+            "punctuation.definition.inserted.diff"
+          ],
+          "foreground": "#C3E88D",
+          "foregroundRule": {
+            "index": 0,
+            "name": "Inserted"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 8,
+          "start": 1,
+          "end": 21,
+          "text": "const essence = 100;",
+          "scopes": [
+            "source.diff",
+            "markup.inserted.diff"
+          ],
+          "foreground": "#C3E88D",
+          "foregroundRule": {
+            "index": 0,
+            "name": "Inserted"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 10,
+          "start": 0,
+          "end": 3,
+          "text": "***",
+          "scopes": [
+            "source.diff",
+            "meta.diff.header.from-file",
+            "punctuation.definition.from-file.diff"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 10,
+          "start": 3,
+          "end": 17,
+          "text": " ritual-old.ts",
+          "scopes": [
+            "source.diff",
+            "meta.diff.header.from-file"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 11,
+          "start": 0,
+          "end": 3,
+          "text": "---",
+          "scopes": [
+            "source.diff",
+            "meta.diff.header.from-file",
+            "punctuation.definition.from-file.diff"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 11,
+          "start": 3,
+          "end": 17,
+          "text": " ritual-new.ts",
+          "scopes": [
+            "source.diff",
+            "meta.diff.header.from-file"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 12,
+          "start": 0,
+          "end": 15,
+          "text": "***************",
+          "scopes": [
+            "source.diff",
+            "meta.separator.diff",
+            "punctuation.definition.separator.diff"
+          ],
+          "foreground": "#777F86",
+          "foregroundRule": {
+            "index": 21,
+            "name": "Markdown - Separator"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 13,
+          "start": 0,
+          "end": 3,
+          "text": "***",
+          "scopes": [
+            "source.diff",
+            "meta.diff.range.context",
+            "punctuation.definition.range.diff"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 13,
+          "start": 3,
+          "end": 8,
+          "text": " 1,2 ",
+          "scopes": [
+            "source.diff",
+            "meta.diff.range.context"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 13,
+          "start": 8,
+          "end": 12,
+          "text": "****",
+          "scopes": [
+            "source.diff",
+            "meta.diff.range.context",
+            "punctuation.definition.range.diff"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 14,
+          "start": 0,
+          "end": 1,
+          "text": "!",
+          "scopes": [
+            "source.diff",
+            "markup.changed.diff",
+            "punctuation.definition.changed.diff"
+          ],
+          "foreground": "#C792EA",
+          "foregroundRule": {
+            "index": 2,
+            "name": "Changed"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 14,
+          "start": 1,
+          "end": 20,
+          "text": " old ritual changed",
+          "scopes": [
+            "source.diff",
+            "markup.changed.diff"
+          ],
+          "foreground": "#C792EA",
+          "foregroundRule": {
+            "index": 2,
+            "name": "Changed"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 15,
+          "start": 0,
+          "end": 3,
+          "text": "---",
+          "scopes": [
+            "source.diff",
+            "meta.diff.range.context",
+            "punctuation.definition.range.diff"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 15,
+          "start": 3,
+          "end": 8,
+          "text": " 1,2 ",
+          "scopes": [
+            "source.diff",
+            "meta.diff.range.context"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 15,
+          "start": 8,
+          "end": 12,
+          "text": "----",
+          "scopes": [
+            "source.diff",
+            "meta.diff.range.context",
+            "punctuation.definition.range.diff"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 16,
+          "start": 0,
+          "end": 1,
+          "text": "!",
+          "scopes": [
+            "source.diff",
+            "markup.changed.diff",
+            "punctuation.definition.changed.diff"
+          ],
+          "foreground": "#C792EA",
+          "foregroundRule": {
+            "index": 2,
+            "name": "Changed"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 16,
+          "start": 1,
+          "end": 20,
+          "text": " new ritual changed",
+          "scopes": [
+            "source.diff",
+            "markup.changed.diff"
+          ],
+          "foreground": "#C792EA",
+          "foregroundRule": {
+            "index": 2,
+            "name": "Changed"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 18,
+          "start": 0,
+          "end": 3,
+          "text": "1c1",
+          "scopes": [
+            "source.diff",
+            "meta.diff.range.normal"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 19,
+          "start": 0,
+          "end": 1,
+          "text": "<",
+          "scopes": [
+            "source.diff",
+            "markup.deleted.diff",
+            "punctuation.definition.deleted.diff"
+          ],
+          "foreground": "#FF5370",
+          "foregroundRule": {
+            "index": 1,
+            "name": "Deleted"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 19,
+          "start": 1,
+          "end": 17,
+          "text": " old normal diff",
+          "scopes": [
+            "source.diff",
+            "markup.deleted.diff"
+          ],
+          "foreground": "#FF5370",
+          "foregroundRule": {
+            "index": 1,
+            "name": "Deleted"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 20,
+          "start": 0,
+          "end": 3,
+          "text": "---",
+          "scopes": [
+            "source.diff",
+            "meta.separator.diff",
+            "punctuation.definition.separator.diff"
+          ],
+          "foreground": "#777F86",
+          "foregroundRule": {
+            "index": 21,
+            "name": "Markdown - Separator"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 21,
+          "start": 0,
+          "end": 1,
+          "text": ">",
+          "scopes": [
+            "source.diff",
+            "markup.inserted.diff",
+            "punctuation.definition.inserted.diff"
+          ],
+          "foreground": "#C3E88D",
+          "foregroundRule": {
+            "index": 0,
+            "name": "Inserted"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 21,
+          "start": 1,
+          "end": 17,
+          "text": " new normal diff",
+          "scopes": [
+            "source.diff",
+            "markup.inserted.diff"
+          ],
+          "foreground": "#C3E88D",
+          "foregroundRule": {
+            "index": 0,
+            "name": "Inserted"
+          },
+          "editorForegroundFallback": false
+        },
+        {
+          "line": 23,
+          "start": 0,
+          "end": 1,
+          "text": "#",
+          "scopes": [
+            "source.diff",
+            "comment.line.number-sign.diff",
+            "punctuation.definition.comment.diff"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        },
+        {
+          "line": 23,
+          "start": 1,
+          "end": 14,
+          "text": " Diff comment",
+          "scopes": [
+            "source.diff",
+            "comment.line.number-sign.diff"
+          ],
+          "foreground": "#EEFFFF",
+          "foregroundRule": null,
+          "editorForegroundFallback": true
+        }
+      ]
+    }
+  ]
+}

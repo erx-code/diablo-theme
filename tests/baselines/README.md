@@ -1,8 +1,23 @@
-# Frozen baseline: palette architecture migration, step 1
+# Reviewed theme baselines
 
-These JSON files are verbatim copies of the generated Necromancer Dark and
-Necromancer Light themes at the start of migration. They are independent expected
-data: no palette imports, placeholders or computed colors.
+`necromancer-dark.json` and `necromancer-light.json` are the current reviewed
+theme baselines. They are independent expected data: no palette imports,
+placeholders or computed colors.
+
+Step 20.1 explicitly approved the seven Markdown selector-array corrections in
+Dark. Its original Step 1 baseline is preserved byte-for-byte as
+`necromancer-dark-pre-markdown-fix.json`; historical delta and token-neighbor
+tests continue to use it. The exact approved changes are recorded in
+`../fixtures/markdown-selectors-step20.json` and `.diff`. Light remains the
+original Step 1 baseline. No colors, styles or other bindings changed.
+
+Step 22.1 approved the 19 appended Markdown embedded TS/JS rules (147
+selectors). The preceding Step 20.1 baseline is preserved byte-for-byte as
+`necromancer-dark-pre-embedded-tsjs.json`. Step 20 tests compare this snapshot
+against `necromancer-dark-pre-markdown-fix.json`; Step 22 isolation tests compare
+the current theme against the pre-embedded snapshot. The exact approved delta is
+`../fixtures/markdown-embedded-step22.diff`. No existing rule settings, colors,
+Workbench bindings or semantic token selectors changed. Light is unchanged.
 
 `npm run build` writes only `themes/`. No build, check or test command updates
 these snapshots. During architecture migration, keep them unchanged and fix the

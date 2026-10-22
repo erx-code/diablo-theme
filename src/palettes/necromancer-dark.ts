@@ -1,100 +1,101 @@
-// Source of truth. Run npm run build after editing; themes/*.json are generated.
+import { primitives } from './necromancer-dark/primitives.ts';
+import { compatibility } from './necromancer-dark/compatibility.ts';
+import { derived } from './necromancer-dark/derived.ts';
+import { semantic } from './necromancer-dark/semantic.ts';
+
+// Compatibility facade. Run npm run build after editing; themes/*.json are generated.
 export const palette = {
-  editor: "#242424",
-  sidebar: "#1B1B1B",
-  elevated: "#303030",
-  border: "#3A3A3A",
-  selectionSurface: "#414141",
-  chatBubble: "#242424CC",
-  chatBubbleHover: "#303030CC",
-  chatCodeBorder: "#3A3A3A80",
-  bone: "#D8CBB8",
-  ancientBone: "#E0D4C2",
-  paleBone: "#F0E9DE",
-  sageAsh: "#A8B59A",
-  dustyCopper: "#C9A18B",
-  blood: "#B34752",
-  ashRose: "#C58F96",
-  silver: "#AEB5BA",
-  inactiveForeground: "#777F86",
-  editorForeground: "#eeffff",
-  sidebarTitle: "#bbbbbb",
+  editor: primitives.charcoal.editor,
+  sidebar: primitives.charcoal.sidebar,
+  elevated: primitives.charcoal.elevated,
+  border: primitives.charcoal.border,
+  selectionSurface: primitives.charcoal.selection,
+  chatBubble: derived.chat.bubble,
+  chatBubbleHover: derived.chat.bubbleHover,
+  chatCodeBorder: derived.chat.codeBorder,
+  bone: primitives.bone.base,
+  ancientBone: primitives.bone.ancient,
+  paleBone: primitives.bone.pale,
+  sageAsh: primitives.sageAsh,
+  dustyCopper: primitives.dustyCopper,
+  blood: primitives.blood,
+  ashRose: primitives.ashRose,
+  silver: primitives.silver,
+  inactiveForeground: primitives.mutedAsh,
+  editorForeground: compatibility.editorForeground,
+  sidebarTitle: compatibility.sidebarTitle,
   // Retained exclusively for unchanged Workbench badges, diff and transparent markup overlays.
-  syntaxWhite: "#ffffff",
-  syntaxInvalid: "#FF5370",
-  syntaxPurple: "#C792EA",
-  syntaxGreen: "#C3E88D",
-  syntaxFencedOverlay: "#00000050",
+  syntaxWhite: compatibility.badgeForeground,
+  syntaxInvalid: compatibility.deletedMarkup,
+  syntaxPurple: compatibility.changedMarkup,
+  syntaxGreen: compatibility.insertedMarkup,
+  syntaxFencedOverlay: derived.markdown.fencedOverlay,
 } as const satisfies Record<string, `#${string}`>;
 
-// Transparent variant of an existing base; no additional base color.
-const transparentScrollbarShadow = `${palette.editor}00`;
-
-// Git roles reference the existing primitives. Alpha suffixes are local, explicit
-// overlays, not a new shade-generation architecture or additional base colors.
+// Compatibility aliases; bindings below use domain-specific semantic roles directly.
 export const gitPalette = {
-  modified: palette.dustyCopper,
-  added: palette.sageAsh,
-  deleted: palette.blood,
-  conflicting: palette.ashRose,
-  ignored: palette.inactiveForeground,
-  submodule: palette.silver,
-  border: palette.border,
-  insertedText: `${palette.sageAsh}33`,
-  insertedLine: `${palette.sageAsh}14`,
-  removedText: `${palette.blood}33`,
-  removedLine: `${palette.blood}14`,
-  conflictHeader: `${palette.ashRose}33`,
-  conflictContent: `${palette.ashRose}14`,
-  neutralHeader: `${palette.silver}26`,
-  neutralContent: `${palette.silver}14`,
+  modified: semantic.git.modified,
+  added: semantic.git.added,
+  deleted: semantic.git.deleted,
+  conflicting: semantic.git.conflicting,
+  ignored: semantic.git.ignored,
+  submodule: semantic.git.submodule,
+  border: semantic.diff.border,
+  insertedText: semantic.diff.inserted.textBackground,
+  insertedLine: semantic.diff.inserted.lineBackground,
+  removedText: semantic.diff.removed.textBackground,
+  removedLine: semantic.diff.removed.lineBackground,
+  conflictHeader: semantic.merge.current.headerBackground,
+  conflictContent: semantic.merge.current.contentBackground,
+  neutralHeader: semantic.merge.common.headerBackground,
+  neutralContent: semantic.merge.common.contentBackground,
 } as const satisfies Record<string, `#${string}`>;
 
 export const gitColors = {
   // Explorer and SCM resource decorations (including staged resources).
-  "gitDecoration.modifiedResourceForeground": gitPalette.modified,
-  "gitDecoration.addedResourceForeground": gitPalette.added,
-  "gitDecoration.untrackedResourceForeground": gitPalette.added,
-  "gitDecoration.deletedResourceForeground": gitPalette.deleted,
-  "gitDecoration.conflictingResourceForeground": gitPalette.conflicting,
-  "gitDecoration.ignoredResourceForeground": gitPalette.ignored,
-  "gitDecoration.submoduleResourceForeground": gitPalette.submodule,
-  "gitDecoration.stageModifiedResourceForeground": gitPalette.modified,
-  "gitDecoration.stageDeletedResourceForeground": gitPalette.deleted,
-  "gitDecoration.renamedResourceForeground": gitPalette.modified,
-  "editorGutter.modifiedBackground": gitPalette.modified,
-  "editorGutter.addedBackground": gitPalette.added,
-  "editorGutter.deletedBackground": gitPalette.deleted,
-  "diffEditor.insertedTextBackground": gitPalette.insertedText,
-  "diffEditor.removedTextBackground": gitPalette.removedText,
-  "diffEditor.insertedLineBackground": gitPalette.insertedLine,
-  "diffEditor.removedLineBackground": gitPalette.removedLine,
-  "diffEditor.border": gitPalette.border,
-  "diffEditor.diagonalFill": gitPalette.neutralHeader,
+  "gitDecoration.modifiedResourceForeground": semantic.git.modified,
+  "gitDecoration.addedResourceForeground": semantic.git.added,
+  "gitDecoration.untrackedResourceForeground": semantic.git.untracked,
+  "gitDecoration.deletedResourceForeground": semantic.git.deleted,
+  "gitDecoration.conflictingResourceForeground": semantic.git.conflicting,
+  "gitDecoration.ignoredResourceForeground": semantic.git.ignored,
+  "gitDecoration.submoduleResourceForeground": semantic.git.submodule,
+  "gitDecoration.stageModifiedResourceForeground": semantic.git.stagedModified,
+  "gitDecoration.stageDeletedResourceForeground": semantic.git.stagedDeleted,
+  "gitDecoration.renamedResourceForeground": semantic.git.renamed,
+  "editorGutter.modifiedBackground": semantic.git.gutter.modified,
+  "editorGutter.addedBackground": semantic.git.gutter.added,
+  "editorGutter.deletedBackground": semantic.git.gutter.deleted,
+  "diffEditor.insertedTextBackground": semantic.diff.inserted.textBackground,
+  "diffEditor.removedTextBackground": semantic.diff.removed.textBackground,
+  "diffEditor.insertedLineBackground": semantic.diff.inserted.lineBackground,
+  "diffEditor.removedLineBackground": semantic.diff.removed.lineBackground,
+  "diffEditor.border": semantic.diff.border,
+  "diffEditor.diagonalFill": semantic.diff.diagonalFill,
   // Inline conflict markers: both sides are conflicts, the common ancestor is neutral.
-  "merge.currentHeaderBackground": gitPalette.conflictHeader,
-  "merge.currentContentBackground": gitPalette.conflictContent,
-  "merge.incomingHeaderBackground": gitPalette.conflictHeader,
-  "merge.incomingContentBackground": gitPalette.conflictContent,
-  "merge.commonHeaderBackground": gitPalette.neutralHeader,
-  "merge.commonContentBackground": gitPalette.neutralContent,
-  "merge.border": gitPalette.conflicting,
-  "mergeEditor.change.background": gitPalette.insertedLine,
-  "mergeEditor.change.word.background": gitPalette.insertedText,
-  "mergeEditor.changeBase.background": gitPalette.removedLine,
-  "mergeEditor.changeBase.word.background": gitPalette.removedText,
-  "mergeEditor.conflict.unhandledFocused.border": gitPalette.conflicting,
-  "mergeEditor.conflict.unhandledUnfocused.border": gitPalette.conflicting,
-  "mergeEditor.conflict.handledFocused.border": gitPalette.border,
-  "mergeEditor.conflict.handledUnfocused.border": gitPalette.border,
-  "mergeEditor.conflict.unhandled.minimapOverViewRuler": gitPalette.conflicting,
-  "mergeEditor.conflict.handled.minimapOverViewRuler": gitPalette.ignored,
-  "mergeEditor.conflictingLines.background": gitPalette.conflictContent,
-  "mergeEditor.conflict.input1.background": gitPalette.conflictContent,
-  "mergeEditor.conflict.input2.background": gitPalette.conflictContent,
-  "editorOverviewRuler.currentContentForeground": gitPalette.conflicting,
-  "editorOverviewRuler.incomingContentForeground": gitPalette.conflicting,
-  "editorOverviewRuler.commonContentForeground": gitPalette.ignored,
+  "merge.currentHeaderBackground": semantic.merge.current.headerBackground,
+  "merge.currentContentBackground": semantic.merge.current.contentBackground,
+  "merge.incomingHeaderBackground": semantic.merge.incoming.headerBackground,
+  "merge.incomingContentBackground": semantic.merge.incoming.contentBackground,
+  "merge.commonHeaderBackground": semantic.merge.common.headerBackground,
+  "merge.commonContentBackground": semantic.merge.common.contentBackground,
+  "merge.border": semantic.merge.border,
+  "mergeEditor.change.background": semantic.merge.change.background,
+  "mergeEditor.change.word.background": semantic.merge.change.wordBackground,
+  "mergeEditor.changeBase.background": semantic.merge.baseChange.background,
+  "mergeEditor.changeBase.word.background": semantic.merge.baseChange.wordBackground,
+  "mergeEditor.conflict.unhandledFocused.border": semantic.merge.conflict.unhandled.border,
+  "mergeEditor.conflict.unhandledUnfocused.border": semantic.merge.conflict.unhandled.border,
+  "mergeEditor.conflict.handledFocused.border": semantic.merge.conflict.handled.border,
+  "mergeEditor.conflict.handledUnfocused.border": semantic.merge.conflict.handled.border,
+  "mergeEditor.conflict.unhandled.minimapOverViewRuler": semantic.merge.conflict.unhandled.overviewForeground,
+  "mergeEditor.conflict.handled.minimapOverViewRuler": semantic.merge.conflict.handled.overviewForeground,
+  "mergeEditor.conflictingLines.background": semantic.merge.conflict.linesBackground,
+  "mergeEditor.conflict.input1.background": semantic.merge.conflict.inputBackground,
+  "mergeEditor.conflict.input2.background": semantic.merge.conflict.inputBackground,
+  "editorOverviewRuler.currentContentForeground": semantic.merge.current.overviewForeground,
+  "editorOverviewRuler.incomingContentForeground": semantic.merge.incoming.overviewForeground,
+  "editorOverviewRuler.commonContentForeground": semantic.merge.common.overviewForeground,
 } as const;
 
 // Keep the existing generator: these helpers only expand language-qualified theme selectors.
@@ -104,12 +105,68 @@ const codeLanguages = [
   { root: "source.js", language: "javascript" },
   { root: "source.js.jsx", language: "javascriptreact" },
 ] as const;
+
 const inCode = (...scopes: string[]) => codeLanguages.flatMap(({ root }) => scopes.map(scope => `${root} ${scope}`));
+
 const inStyles = (...scopes: string[]) => scopes.map(scope => `source.css ${scope}`);
+
 const inHTML = (...scopes: string[]) => ["text.html.basic", "text.html.derivative"].flatMap(root => scopes.map(scope => `${root} ${scope}`));
+
 const rule = (name: string, scope: string[], foreground: string, fontStyle?: string) => ({
   name, scope, settings: { foreground, ...(fontStyle === undefined ? {} : { fontStyle }) },
 });
+
+// Reuse existing rule colors, styles and precedence, changing only the root context.
+// JSX-specific rules are deliberately excluded. The stock Markdown grammar maps
+// `jsx` to the same JavaScript context as `js`; ordinary JS tokens there cannot
+// be distinguished by a theme selector.
+const withMarkdownEmbedded = (rules: {
+  name: string; scope: string[]; settings: { foreground?: string; fontStyle?: string };
+}[]) => {
+  const contexts = [
+    ["source.ts", "meta.embedded.block.typescript"],
+    ["source.js", "meta.embedded.block.javascript"],
+  ] as const;
+  // TextMate compares the nearest parent's specificity, not just rule order.
+  // Long embedded scopes would otherwise outrank short `string.regexp` and
+  // `comment.line` parents. Use emitted leaf prefixes for these overrides.
+  const contextualLeaves = (name: string, leaf: string, suffix: string) => {
+    if (name === "Code — Quoted object keys") {
+      if (leaf === "string.quoted") return ["string.quoted.double", "string.quoted.single"];
+      if (leaf === "constant.character.escape") return [`constant.character.escape.${suffix}`];
+    }
+    if (name === "Regex — Pattern constructs") {
+      if (leaf === "keyword") return ["keyword.control", "keyword.operator", "keyword.other"];
+      if (leaf === "variable") return ["variable.other"];
+      if (leaf === "punctuation") return ["punctuation.definition"];
+    }
+    if (name === "Code — Comment internals") {
+      if (leaf === "keyword") return ["keyword.operator"];
+      if (leaf === "storage") return ["storage.type"];
+      if (leaf === "punctuation") return ["punctuation.definition", "punctuation.separator", "punctuation.whitespace"];
+      if (leaf === "variable") return ["variable.other"];
+      if (leaf === "constant") return ["constant.language", "constant.other"];
+      if (leaf === "entity.name.type") return ["entity.name.type.instance.jsdoc"];
+      if (leaf === "entity.name.tag") return ["entity.name.tag.inline.jsdoc"];
+      if (leaf === "invalid") return ["invalid.illegal.syntax.jsdoc"];
+    }
+    return [leaf];
+  };
+  const additions = rules.filter(entry => !entry.name.startsWith("JSX —")).flatMap(entry => {
+    const scope = contexts.flatMap(([root, embedded]) => entry.scope.flatMap(selector =>
+      selector === root || selector.startsWith(`${root} `)
+        ? (() => {
+          const relative = selector.slice(root.length).trim();
+          const parts = relative.split(" ");
+          const leaf = parts.pop()!;
+          return contextualLeaves(entry.name, leaf, root.slice(7)).map(specific =>
+            `text.html.markdown markup.fenced_code.block.markdown ${embedded}${relative ? ` ${[...parts, specific].join(" ")}` : ""}`);
+        })()
+        : []));
+    return scope.length ? [{ ...entry, name: `Markdown embedded — ${entry.name}`, scope }] : [];
+  });
+  return [...rules, ...additions];
+};
 
 // Diff colors and transparent overlays are intentionally preserved.
 const preservedMarkup = [
@@ -119,7 +176,7 @@ const preservedMarkup = [
       "markup.inserted"
     ],
     "settings": {
-      "foreground": palette.syntaxGreen
+      "foreground": semantic.syntax.diffMarkup.inserted
     }
   },
   {
@@ -128,7 +185,7 @@ const preservedMarkup = [
       "markup.deleted"
     ],
     "settings": {
-      "foreground": palette.syntaxInvalid
+      "foreground": semantic.syntax.diffMarkup.deleted
     }
   },
   {
@@ -137,46 +194,45 @@ const preservedMarkup = [
       "markup.changed"
     ],
     "settings": {
-      "foreground": palette.syntaxPurple
+      "foreground": semantic.syntax.diffMarkup.changed
     }
   },
   {
     "name": "Markdown - Plain",
     "scope": [
       "text.html.markdown",
-      "punctuation.definition.list_item.markdown"
+      "text.html.markdown punctuation.definition.list.begin.markdown"
     ],
     "settings": {
-      "foreground": palette.bone
+      "foreground": semantic.syntax.markdown.text
     }
   },
   {
     "name": "Markdown - Markup Raw Inline",
     "scope": [
-      "text.html.markdown markup.inline.raw.markdown"
+      "text.html.markdown markup.inline.raw.string.markdown"
     ],
     "settings": {
-      "foreground": palette.sageAsh
+      "foreground": semantic.syntax.markdown.inlineCode
     }
   },
   {
     "name": "Markdown - Markup Raw Inline Punctuation",
     "scope": [
-      "text.html.markdown markup.inline.raw.markdown punctuation.definition.raw.markdown"
+      "text.html.markdown markup.inline.raw.string.markdown punctuation.definition.raw.markdown"
     ],
     "settings": {
-      "foreground": palette.inactiveForeground
+      "foreground": semantic.syntax.markdown.inlineCodePunctuation
     }
   },
   {
     "name": "Markdown - Heading",
     "scope": [
-      "markdown.heading",
-      "markup.heading | markup.heading entity.name",
+      "text.html.markdown markup.heading.markdown entity.name.section.markdown",
       "markup.heading.markdown punctuation.definition.heading.markdown"
     ],
     "settings": {
-      "foreground": palette.ancientBone
+      "foreground": semantic.syntax.markdown.heading
     }
   },
   {
@@ -186,7 +242,7 @@ const preservedMarkup = [
     ],
     "settings": {
       "fontStyle": "italic",
-      "foreground": palette.ashRose
+      "foreground": semantic.syntax.markdown.emphasis
     }
   },
   {
@@ -197,7 +253,7 @@ const preservedMarkup = [
     ],
     "settings": {
       "fontStyle": "bold",
-      "foreground": palette.ashRose
+      "foreground": semantic.syntax.markdown.emphasis
     }
   },
   {
@@ -212,7 +268,7 @@ const preservedMarkup = [
     ],
     "settings": {
       "fontStyle": "bold",
-      "foreground": palette.ashRose
+      "foreground": semantic.syntax.markdown.emphasis
     }
   },
   {
@@ -222,16 +278,16 @@ const preservedMarkup = [
     ],
     "settings": {
       "fontStyle": "underline",
-      "foreground": palette.silver
+      "foreground": semantic.syntax.markdown.underline
     }
   },
   {
     "name": "Markdown - Blockquote",
     "scope": [
-      "markup.quote punctuation.definition.blockquote.markdown"
+      "text.html.markdown markup.quote.markdown punctuation.definition.quote.begin.markdown"
     ],
     "settings": {
-      "foreground": palette.inactiveForeground
+      "foreground": semantic.syntax.markdown.quoteMarker
     }
   },
   {
@@ -249,7 +305,7 @@ const preservedMarkup = [
       "string.other.link.title.markdown"
     ],
     "settings": {
-      "foreground": palette.ashRose
+      "foreground": semantic.syntax.markdown.link
     }
   },
   {
@@ -258,7 +314,7 @@ const preservedMarkup = [
       "string.other.link.description.title.markdown"
     ],
     "settings": {
-      "foreground": palette.sageAsh
+      "foreground": semantic.syntax.markdown.linkDescription
     }
   },
   {
@@ -267,7 +323,7 @@ const preservedMarkup = [
       "constant.other.reference.link.markdown"
     ],
     "settings": {
-      "foreground": palette.ashRose
+      "foreground": semantic.syntax.markdown.linkReference
     }
   },
   {
@@ -276,7 +332,7 @@ const preservedMarkup = [
       "markup.raw.block"
     ],
     "settings": {
-      "foreground": palette.sageAsh
+      "foreground": semantic.syntax.markdown.rawCode
     }
   },
   {
@@ -285,7 +341,7 @@ const preservedMarkup = [
       "markup.raw.block.fenced.markdown"
     ],
     "settings": {
-      "foreground": palette.syntaxFencedOverlay
+      "foreground": semantic.syntax.markdown.fencedOverlayForeground
     }
   },
   {
@@ -294,27 +350,27 @@ const preservedMarkup = [
       "punctuation.definition.fenced.markdown"
     ],
     "settings": {
-      "foreground": palette.syntaxFencedOverlay
+      "foreground": semantic.syntax.markdown.fencedOverlayForeground
     }
   },
   {
     "name": "Markdown - Fenced Bode Block Variable",
     "scope": [
-      "markup.raw.block.fenced.markdown",
+      "text.html.markdown markup.fenced_code.block.markdown",
       "variable.language.fenced.markdown",
       "punctuation.section.class.end"
     ],
     "settings": {
-      "foreground": palette.bone
+      "foreground": semantic.syntax.markdown.fencedContent
     }
   },
   {
     "name": "Markdown - Fenced Language",
     "scope": [
-      "variable.language.fenced.markdown"
+      "text.html.markdown fenced_code.block.language.markdown"
     ],
     "settings": {
-      "foreground": palette.inactiveForeground
+      "foreground": semantic.syntax.markdown.fencedLanguage
     }
   },
   {
@@ -324,7 +380,7 @@ const preservedMarkup = [
     ],
     "settings": {
       "fontStyle": "bold",
-      "foreground": palette.inactiveForeground
+      "foreground": semantic.syntax.markdown.separator
     }
   },
   {
@@ -333,7 +389,7 @@ const preservedMarkup = [
       "markup.table"
     ],
     "settings": {
-      "foreground": palette.bone
+      "foreground": semantic.syntax.markdown.table
     }
   }
 ];
@@ -341,13 +397,13 @@ const preservedMarkup = [
 // A selector without modifier restrictions covers readonly/static/defaultLibrary/etc.
 // No *.readonly or *.defaultLibrary rule can override the category hierarchy.
 const semanticRoles = {
-  variable: palette.bone, parameter: palette.bone, property: palette.bone, enumMember: palette.bone,
-  function: palette.ashRose, method: palette.ashRose, decorator: palette.ashRose,
-  type: palette.ancientBone, class: palette.ancientBone, interface: palette.ancientBone,
-  enum: palette.ancientBone, namespace: palette.ancientBone, typeParameter: palette.ancientBone,
-  keyword: palette.silver, operator: palette.silver, label: palette.bone,
-  string: palette.sageAsh, regexp: palette.sageAsh, number: palette.dustyCopper,
-  comment: palette.inactiveForeground,
+  variable: semantic.syntax.variable, parameter: semantic.syntax.parameter, property: semantic.syntax.property, enumMember: semantic.syntax.enumMember,
+  function: semantic.syntax.function, method: semantic.syntax.method, decorator: semantic.syntax.decorator,
+  type: semantic.syntax.type, class: semantic.syntax.class, interface: semantic.syntax.interface,
+  enum: semantic.syntax.enum, namespace: semantic.syntax.namespace, typeParameter: semantic.syntax.typeParameter,
+  keyword: semantic.syntax.keyword, operator: semantic.syntax.operator, label: semantic.syntax.label,
+  string: semantic.syntax.string, regexp: semantic.syntax.regexp, number: semantic.syntax.number,
+  comment: semantic.syntax.comment,
 };
 
 export const necromancerDark = {
@@ -355,263 +411,263 @@ export const necromancerDark = {
   "colors": {
     ...gitColors,
     // Editor surfaces
-    "editor.background": palette.editor,
-    "panel.background": palette.sidebar,
-    "editor.lineHighlightBackground": palette.elevated,
-    "panel.border": palette.border,
-    "editor.foreground": palette.editorForeground,
-    "sideBarTitle.foreground": palette.sidebarTitle,
+    "editor.background": semantic.workbench.editor.background,
+    "panel.background": semantic.workbench.panel.background,
+    "editor.lineHighlightBackground": semantic.workbench.editor.lineHighlightBackground,
+    "panel.border": semantic.workbench.panel.border,
+    "editor.foreground": semantic.workbench.editor.foreground,
+    "sideBarTitle.foreground": semantic.workbench.sidebar.titleForeground,
     // Workbench surfaces and boundaries
-    "titleBar.activeBackground": palette.sidebar,
-    "titleBar.inactiveBackground": palette.sidebar,
-    "titleBar.activeForeground": palette.bone,
-    "titleBar.inactiveForeground": palette.inactiveForeground,
-    "window.activeBorder": palette.border,
-    "window.inactiveBorder": palette.border,
-    "editorGroup.emptyBackground": palette.editor,
-    "sideBarSectionHeader.background": palette.sidebar,
+    "titleBar.activeBackground": semantic.workbench.titleBar.active.background,
+    "titleBar.inactiveBackground": semantic.workbench.titleBar.inactive.background,
+    "titleBar.activeForeground": semantic.workbench.titleBar.active.foreground,
+    "titleBar.inactiveForeground": semantic.workbench.titleBar.inactive.foreground,
+    "window.activeBorder": semantic.workbench.borders.window.active,
+    "window.inactiveBorder": semantic.workbench.borders.window.inactive,
+    "editorGroup.emptyBackground": semantic.workbench.editor.emptyBackground,
+    "sideBarSectionHeader.background": semantic.workbench.sidebar.sectionHeaderBackground,
     // Modern UI exposes the shell through the gaps around floating panels.
     // Set both states explicitly so the transparent sash shows the same base surface.
-    "modernUI.shellBackground": palette.sidebar,
-    "modernUI.inactiveShellBackground": palette.sidebar,
-    "sideBar.background": palette.sidebar,
-    "activityBarBadge.background": palette.blood,
-    "foreground": palette.bone,
-    "icon.foreground": palette.bone,
-    "descriptionForeground": palette.silver,
-    "activityBar.background": palette.sidebar,
-    "editorGroupHeader.tabsBackground": palette.sidebar,
-    "editorGroupHeader.noTabsBackground": palette.sidebar,
-    "sideBar.border": palette.border,
-    "activityBar.border": palette.border,
-    "editorGroup.border": palette.border,
+    "modernUI.shellBackground": semantic.workbench.shell.activeBackground,
+    "modernUI.inactiveShellBackground": semantic.workbench.shell.inactiveBackground,
+    "sideBar.background": semantic.workbench.sidebar.background,
+    "activityBarBadge.background": semantic.workbench.activityBar.badge.background,
+    "foreground": semantic.workbench.text.foreground,
+    "icon.foreground": semantic.workbench.icon.foreground,
+    "descriptionForeground": semantic.workbench.text.descriptionForeground,
+    "activityBar.background": semantic.workbench.activityBar.background,
+    "editorGroupHeader.tabsBackground": semantic.workbench.tabs.header.background,
+    "editorGroupHeader.noTabsBackground": semantic.workbench.tabs.header.withoutTabsBackground,
+    "sideBar.border": semantic.workbench.sidebar.border,
+    "activityBar.border": semantic.workbench.activityBar.border,
+    "editorGroup.border": semantic.workbench.borders.editorGroup,
     // Diff pane box-shadows and scrollable-container shadows share this official token.
-    "scrollbar.shadow": transparentScrollbarShadow,
-    "sideBySideEditor.verticalBorder": palette.border,
-    "sideBySideEditor.horizontalBorder": palette.border,
-    "widget.border": palette.border,
-    "editorGroupHeader.tabsBorder": palette.border,
-    "editorGroupHeader.border": palette.border,
-    "focusBorder": palette.blood,
-    "sash.hoverBorder": palette.blood,
-    "activityBar.activeBorder": palette.blood,
-    "badge.background": palette.blood,
-    "activityBarBadge.foreground": palette.syntaxWhite,
-    "badge.foreground": palette.syntaxWhite,
+    "scrollbar.shadow": semantic.workbench.scrollbar.shadow,
+    "sideBySideEditor.verticalBorder": semantic.workbench.borders.sideBySide.vertical,
+    "sideBySideEditor.horizontalBorder": semantic.workbench.borders.sideBySide.horizontal,
+    "widget.border": semantic.workbench.widget.border,
+    "editorGroupHeader.tabsBorder": semantic.workbench.tabs.header.tabsBorder,
+    "editorGroupHeader.border": semantic.workbench.tabs.header.border,
+    "focusBorder": semantic.workbench.borders.focus,
+    "sash.hoverBorder": semantic.workbench.borders.sashHover,
+    "activityBar.activeBorder": semantic.workbench.activityBar.activeBorder,
+    "badge.background": semantic.workbench.badge.background,
+    "activityBarBadge.foreground": semantic.workbench.activityBar.badge.foreground,
+    "badge.foreground": semantic.workbench.badge.foreground,
     // Explorer and other lists
-    "list.hoverForeground": palette.bone,
-    "list.activeSelectionForeground": palette.bone,
-    "list.inactiveSelectionForeground": palette.bone,
-    "list.focusForeground": palette.bone,
-    "list.inactiveSelectionBackground": palette.selectionSurface,
-    "list.inactiveFocusBackground": palette.editor,
-    "list.hoverBackground": palette.selectionSurface,
-    "list.activeSelectionBackground": palette.selectionSurface,
-    "list.focusBackground": palette.selectionSurface,
-    "quickInputList.focusBackground": palette.selectionSurface,
-    "quickInputList.focusForeground": palette.bone,
-    "list.focusOutline": palette.blood,
-    "list.focusAndSelectionOutline": palette.blood,
-    "list.highlightForeground": palette.ashRose,
-    "list.focusHighlightForeground": palette.ashRose,
+    "list.hoverForeground": semantic.workbench.list.hover.foreground,
+    "list.activeSelectionForeground": semantic.workbench.list.activeSelection.foreground,
+    "list.inactiveSelectionForeground": semantic.workbench.list.inactiveSelection.foreground,
+    "list.focusForeground": semantic.workbench.list.focus.foreground,
+    "list.inactiveSelectionBackground": semantic.workbench.list.inactiveSelection.background,
+    "list.inactiveFocusBackground": semantic.workbench.list.inactiveFocusBackground,
+    "list.hoverBackground": semantic.workbench.list.hover.background,
+    "list.activeSelectionBackground": semantic.workbench.list.activeSelection.background,
+    "list.focusBackground": semantic.workbench.list.focus.background,
+    "quickInputList.focusBackground": semantic.workbench.quickPick.focus.background,
+    "quickInputList.focusForeground": semantic.workbench.quickPick.focus.foreground,
+    "list.focusOutline": semantic.workbench.list.focus.outline,
+    "list.focusAndSelectionOutline": semantic.workbench.list.focusAndSelectionOutline,
+    "list.highlightForeground": semantic.workbench.list.highlightForeground,
+    "list.focusHighlightForeground": semantic.workbench.list.focus.highlightForeground,
     // Inputs, buttons and links shared by workbench and chat
-    "inputValidation.infoBackground": palette.editor,
-    "inputValidation.infoForeground": palette.bone,
-    "inputValidation.infoBorder": palette.ashRose,
-    "inputValidation.warningBackground": palette.editor,
-    "inputValidation.warningForeground": palette.bone,
-    "inputValidation.warningBorder": palette.bone,
-    "inputValidation.errorBackground": palette.editor,
-    "inputValidation.errorForeground": palette.ashRose,
-    "inputValidation.errorBorder": palette.blood,
-    "input.foreground": palette.bone,
-    "dropdown.foreground": palette.bone,
-    "button.secondaryForeground": palette.bone,
-    "input.placeholderForeground": palette.silver,
-    "button.foreground": palette.sidebar,
-    "button.hoverBackground": palette.bone,
-    "input.background": palette.editor,
-    "dropdown.background": palette.editor,
-    "dropdown.listBackground": palette.editor,
-    "inputOption.activeBackground": palette.elevated,
-    "inputOption.hoverBackground": palette.elevated,
-    "button.secondaryBackground": palette.elevated,
-    "button.secondaryHoverBackground": palette.elevated,
-    "selection.background": palette.elevated,
-    "input.border": palette.border,
-    "dropdown.border": palette.border,
-    "inputOption.activeBorder": palette.blood,
-    "inputOption.activeForeground": palette.ashRose,
-    "textLink.foreground": palette.ashRose,
-    "textLink.activeForeground": palette.ashRose,
-    "button.background": palette.ashRose,
+    "inputValidation.infoBackground": semantic.workbench.input.validation.info.background,
+    "inputValidation.infoForeground": semantic.workbench.input.validation.info.foreground,
+    "inputValidation.infoBorder": semantic.workbench.input.validation.info.border,
+    "inputValidation.warningBackground": semantic.workbench.input.validation.warning.background,
+    "inputValidation.warningForeground": semantic.workbench.input.validation.warning.foreground,
+    "inputValidation.warningBorder": semantic.workbench.input.validation.warning.border,
+    "inputValidation.errorBackground": semantic.workbench.input.validation.error.background,
+    "inputValidation.errorForeground": semantic.workbench.input.validation.error.foreground,
+    "inputValidation.errorBorder": semantic.workbench.input.validation.error.border,
+    "input.foreground": semantic.workbench.input.foreground,
+    "dropdown.foreground": semantic.workbench.dropdown.foreground,
+    "button.secondaryForeground": semantic.workbench.button.secondary.foreground,
+    "input.placeholderForeground": semantic.workbench.input.placeholderForeground,
+    "button.foreground": semantic.workbench.button.primary.foreground,
+    "button.hoverBackground": semantic.workbench.button.primary.hoverBackground,
+    "input.background": semantic.workbench.input.background,
+    "dropdown.background": semantic.workbench.dropdown.background,
+    "dropdown.listBackground": semantic.workbench.dropdown.listBackground,
+    "inputOption.activeBackground": semantic.workbench.input.option.active.background,
+    "inputOption.hoverBackground": semantic.workbench.input.option.hoverBackground,
+    "button.secondaryBackground": semantic.workbench.button.secondary.background,
+    "button.secondaryHoverBackground": semantic.workbench.button.secondary.hoverBackground,
+    "selection.background": semantic.workbench.text.selectionBackground,
+    "input.border": semantic.workbench.input.border,
+    "dropdown.border": semantic.workbench.dropdown.border,
+    "inputOption.activeBorder": semantic.workbench.input.option.active.border,
+    "inputOption.activeForeground": semantic.workbench.input.option.active.foreground,
+    "textLink.foreground": semantic.workbench.link.foreground,
+    "textLink.activeForeground": semantic.workbench.link.activeForeground,
+    "button.background": semantic.workbench.button.primary.background,
     // Status Bar, including debug, remote, offline and diagnostic states
-    "statusBar.foreground": palette.bone,
-    "statusBar.noFolderForeground": palette.bone,
-    "statusBarItem.hoverForeground": palette.bone,
-    "statusBarItem.prominentForeground": palette.bone,
-    "statusBarItem.prominentHoverForeground": palette.bone,
-    "statusBarItem.remoteForeground": palette.bone,
-    "statusBarItem.remoteHoverForeground": palette.bone,
-    "statusBarItem.warningForeground": palette.bone,
-    "statusBarItem.warningHoverForeground": palette.bone,
-    "statusBar.background": palette.sidebar,
-    "statusBar.noFolderBackground": palette.sidebar,
-    "statusBarItem.warningBackground": palette.editor,
-    "statusBarItem.errorBackground": palette.editor,
-    "statusBar.debuggingBackground": palette.elevated,
-    "statusBarItem.activeBackground": palette.elevated,
-    "statusBarItem.hoverBackground": palette.elevated,
-    "statusBarItem.prominentBackground": palette.elevated,
-    "statusBarItem.remoteBackground": palette.elevated,
-    "statusBarItem.warningHoverBackground": palette.elevated,
-    "statusBarItem.errorHoverBackground": palette.elevated,
-    "statusBarItem.offlineBackground": palette.elevated,
-    "statusBarItem.offlineHoverBackground": palette.elevated,
-    "statusBar.border": palette.border,
-    "statusBar.noFolderBorder": palette.border,
-    "statusBarItem.prominentHoverBackground": palette.border,
-    "statusBarItem.remoteHoverBackground": palette.border,
-    "statusBar.debuggingBorder": palette.blood,
-    "statusBarItem.focusBorder": palette.blood,
-    "statusBar.focusBorder": palette.blood,
-    "statusBar.debuggingForeground": palette.ashRose,
-    "statusBarItem.errorForeground": palette.ashRose,
-    "statusBarItem.errorHoverForeground": palette.ashRose,
-    "statusBarItem.offlineForeground": palette.ashRose,
-    "statusBarItem.offlineHoverForeground": palette.ashRose,
+    "statusBar.foreground": semantic.workbench.statusBar.foreground,
+    "statusBar.noFolderForeground": semantic.workbench.statusBar.noFolder.foreground,
+    "statusBarItem.hoverForeground": semantic.workbench.statusBar.items.hover.foreground,
+    "statusBarItem.prominentForeground": semantic.workbench.statusBar.items.prominent.foreground,
+    "statusBarItem.prominentHoverForeground": semantic.workbench.statusBar.items.prominent.hover.foreground,
+    "statusBarItem.remoteForeground": semantic.workbench.statusBar.items.remote.foreground,
+    "statusBarItem.remoteHoverForeground": semantic.workbench.statusBar.items.remote.hover.foreground,
+    "statusBarItem.warningForeground": semantic.workbench.statusBar.items.warning.foreground,
+    "statusBarItem.warningHoverForeground": semantic.workbench.statusBar.items.warning.hover.foreground,
+    "statusBar.background": semantic.workbench.statusBar.background,
+    "statusBar.noFolderBackground": semantic.workbench.statusBar.noFolder.background,
+    "statusBarItem.warningBackground": semantic.workbench.statusBar.items.warning.background,
+    "statusBarItem.errorBackground": semantic.workbench.statusBar.items.error.background,
+    "statusBar.debuggingBackground": semantic.workbench.statusBar.debugging.background,
+    "statusBarItem.activeBackground": semantic.workbench.statusBar.items.activeBackground,
+    "statusBarItem.hoverBackground": semantic.workbench.statusBar.items.hover.background,
+    "statusBarItem.prominentBackground": semantic.workbench.statusBar.items.prominent.background,
+    "statusBarItem.remoteBackground": semantic.workbench.statusBar.items.remote.background,
+    "statusBarItem.warningHoverBackground": semantic.workbench.statusBar.items.warning.hover.background,
+    "statusBarItem.errorHoverBackground": semantic.workbench.statusBar.items.error.hover.background,
+    "statusBarItem.offlineBackground": semantic.workbench.statusBar.items.offline.background,
+    "statusBarItem.offlineHoverBackground": semantic.workbench.statusBar.items.offline.hover.background,
+    "statusBar.border": semantic.workbench.statusBar.border,
+    "statusBar.noFolderBorder": semantic.workbench.statusBar.noFolder.border,
+    "statusBarItem.prominentHoverBackground": semantic.workbench.statusBar.items.prominent.hover.background,
+    "statusBarItem.remoteHoverBackground": semantic.workbench.statusBar.items.remote.hover.background,
+    "statusBar.debuggingBorder": semantic.workbench.statusBar.debugging.border,
+    "statusBarItem.focusBorder": semantic.workbench.statusBar.items.focusBorder,
+    "statusBar.focusBorder": semantic.workbench.statusBar.focusBorder,
+    "statusBar.debuggingForeground": semantic.workbench.statusBar.debugging.foreground,
+    "statusBarItem.errorForeground": semantic.workbench.statusBar.items.error.foreground,
+    "statusBarItem.errorHoverForeground": semantic.workbench.statusBar.items.error.hover.foreground,
+    "statusBarItem.offlineForeground": semantic.workbench.statusBar.items.offline.foreground,
+    "statusBarItem.offlineHoverForeground": semantic.workbench.statusBar.items.offline.hover.foreground,
     // Editor tabs, including unfocused and modified states
-    "tab.activeForeground": palette.bone,
-    "tab.selectedForeground": palette.bone,
-    "tab.hoverForeground": palette.bone,
-    "tab.unfocusedHoverForeground": palette.bone,
-    "tab.inactiveForeground": palette.silver,
-    "tab.unfocusedActiveForeground": palette.silver,
-    "tab.unfocusedInactiveForeground": palette.silver,
-    "tab.inactiveBackground": palette.sidebar,
-    "tab.unfocusedInactiveBackground": palette.sidebar,
-    "tab.activeBackground": palette.editor,
-    "tab.unfocusedActiveBackground": palette.editor,
-    "tab.selectedBackground": palette.editor,
-    "tab.hoverBackground": palette.elevated,
-    "tab.unfocusedHoverBackground": palette.elevated,
-    "tab.border": palette.border,
-    "tab.activeBorder": palette.border,
-    "tab.unfocusedActiveBorder": palette.border,
-    "tab.unfocusedActiveBorderTop": palette.border,
-    "tab.lastPinnedBorder": palette.border,
-    "tab.activeBorderTop": palette.blood,
-    "tab.selectedBorderTop": palette.blood,
-    "tab.dragAndDropBorder": palette.blood,
-    "tab.hoverBorder": palette.ashRose,
-    "tab.unfocusedHoverBorder": palette.ashRose,
-    "tab.activeModifiedBorder": palette.ashRose,
-    "tab.inactiveModifiedBorder": palette.ashRose,
-    "tab.unfocusedActiveModifiedBorder": palette.ashRose,
-    "tab.unfocusedInactiveModifiedBorder": palette.ashRose,
+    "tab.activeForeground": semantic.workbench.tabs.active.foreground,
+    "tab.selectedForeground": semantic.workbench.tabs.selected.foreground,
+    "tab.hoverForeground": semantic.workbench.tabs.hover.foreground,
+    "tab.unfocusedHoverForeground": semantic.workbench.tabs.unfocused.hover.foreground,
+    "tab.inactiveForeground": semantic.workbench.tabs.inactive.foreground,
+    "tab.unfocusedActiveForeground": semantic.workbench.tabs.unfocused.active.foreground,
+    "tab.unfocusedInactiveForeground": semantic.workbench.tabs.unfocused.inactive.foreground,
+    "tab.inactiveBackground": semantic.workbench.tabs.inactive.background,
+    "tab.unfocusedInactiveBackground": semantic.workbench.tabs.unfocused.inactive.background,
+    "tab.activeBackground": semantic.workbench.tabs.active.background,
+    "tab.unfocusedActiveBackground": semantic.workbench.tabs.unfocused.active.background,
+    "tab.selectedBackground": semantic.workbench.tabs.selected.background,
+    "tab.hoverBackground": semantic.workbench.tabs.hover.background,
+    "tab.unfocusedHoverBackground": semantic.workbench.tabs.unfocused.hover.background,
+    "tab.border": semantic.workbench.tabs.border,
+    "tab.activeBorder": semantic.workbench.tabs.active.border,
+    "tab.unfocusedActiveBorder": semantic.workbench.tabs.unfocused.active.border,
+    "tab.unfocusedActiveBorderTop": semantic.workbench.tabs.unfocused.active.borderTop,
+    "tab.lastPinnedBorder": semantic.workbench.tabs.lastPinnedBorder,
+    "tab.activeBorderTop": semantic.workbench.tabs.active.borderTop,
+    "tab.selectedBorderTop": semantic.workbench.tabs.selected.borderTop,
+    "tab.dragAndDropBorder": semantic.workbench.tabs.dragAndDropBorder,
+    "tab.hoverBorder": semantic.workbench.tabs.hover.border,
+    "tab.unfocusedHoverBorder": semantic.workbench.tabs.unfocused.hover.border,
+    "tab.activeModifiedBorder": semantic.workbench.tabs.active.modifiedBorder,
+    "tab.inactiveModifiedBorder": semantic.workbench.tabs.inactive.modifiedBorder,
+    "tab.unfocusedActiveModifiedBorder": semantic.workbench.tabs.unfocused.active.modifiedBorder,
+    "tab.unfocusedInactiveModifiedBorder": semantic.workbench.tabs.unfocused.inactive.modifiedBorder,
     // Native VS Code chat and editor widgets
-    "inlineChat.foreground": palette.bone,
-    "editorWidget.foreground": palette.bone,
-    "inlineChatInput.placeholderForeground": palette.silver,
-    "inlineChat.background": palette.editor,
-    "inlineChatInput.background": palette.editor,
-    "chat.requestBackground": palette.editor,
-    "chat.requestBubbleBackground": palette.chatBubble,
-    "chat.requestBubbleHoverBackground": palette.chatBubbleHover,
-    "chat.slashCommandBackground": palette.elevated,
-    "chat.avatarBackground": palette.elevated,
-    "editorWidget.background": palette.elevated,
-    "inlineChat.border": palette.border,
-    "inlineChatInput.border": palette.border,
-    "chat.requestBorder": palette.border,
-    "chat.requestCodeBorder": palette.chatCodeBorder,
-    "chat.checkpointSeparator": palette.border,
-    "editorWidget.border": palette.border,
-    "inlineChatInput.focusBorder": palette.blood,
-    "chat.slashCommandForeground": palette.ashRose,
-    "chat.avatarForeground": palette.ashRose,
+    "inlineChat.foreground": semantic.workbench.inlineChat.foreground,
+    "editorWidget.foreground": semantic.workbench.widget.editor.foreground,
+    "inlineChatInput.placeholderForeground": semantic.workbench.inlineChatInput.placeholderForeground,
+    "inlineChat.background": semantic.workbench.inlineChat.background,
+    "inlineChatInput.background": semantic.workbench.inlineChatInput.background,
+    "chat.requestBackground": semantic.workbench.chat.requestBackground,
+    "chat.requestBubbleBackground": semantic.workbench.chat.requestBubbleBackground,
+    "chat.requestBubbleHoverBackground": semantic.workbench.chat.requestBubbleHoverBackground,
+    "chat.slashCommandBackground": semantic.workbench.chat.slashCommandBackground,
+    "chat.avatarBackground": semantic.workbench.chat.avatarBackground,
+    "editorWidget.background": semantic.workbench.widget.editor.background,
+    "inlineChat.border": semantic.workbench.inlineChat.border,
+    "inlineChatInput.border": semantic.workbench.inlineChatInput.border,
+    "chat.requestBorder": semantic.workbench.chat.requestBorder,
+    "chat.requestCodeBorder": semantic.workbench.chat.requestCodeBorder,
+    "chat.checkpointSeparator": semantic.workbench.chat.checkpointSeparator,
+    "editorWidget.border": semantic.workbench.widget.editor.border,
+    "inlineChatInput.focusBorder": semantic.workbench.inlineChatInput.focusBorder,
+    "chat.slashCommandForeground": semantic.workbench.chat.slashCommandForeground,
+    "chat.avatarForeground": semantic.workbench.chat.avatarForeground,
   },
   "semanticHighlighting": true,
   "semanticTokenColors": Object.fromEntries(codeLanguages.flatMap(({ language }) =>
     Object.entries(semanticRoles).map(([type, color]) => [`${type}:${language}`, color])
   )),
-  "tokenColors": [
+  "tokenColors": withMarkdownEmbedded([
     ...preservedMarkup,
     // source.css also qualifies source.css.scss and source.css.tailwind, including embedded styles.
-    rule("CSS — Value fallback", ["source.css"], palette.bone),
-    rule("CSS — Selectors", inStyles("entity.name.tag", "entity.other.attribute-name", "entity.other.namespace-prefix", "entity.name.namespace-prefix"), palette.ancientBone),
-    rule("CSS — Property names", inStyles("support.type.property-name", "support.type.vendored.property-name"), palette.silver),
-    rule("CSS — Variables, values and map keys", inStyles("variable", "support.constant", "constant.other.color", "support.type.map.key"), palette.bone),
-    rule("CSS — Functions and mixins", inStyles("support.function", "entity.name.function"), palette.ashRose),
-    rule("CSS — At-rules, operators and punctuation", inStyles("keyword", "storage", "punctuation"), palette.silver),
-    rule("CSS — Numbers and dimensions", inStyles("constant.numeric", "constant.numeric keyword.other.unit"), palette.dustyCopper),
-    rule("CSS — Strings and escapes", inStyles("string", "constant.character.escape"), palette.sageAsh),
-    rule("CSS — Hex color prefix", inStyles("constant.other.color punctuation.definition.constant"), palette.bone),
-    rule("CSS — Comments", inStyles("comment", "comment.block", "comment.line"), palette.inactiveForeground, "italic"),
-    rule("CSS — Comment internals", inStyles("comment.block punctuation", "comment.line punctuation", "comment.block entity", "comment.block variable", "comment.block keyword", "comment.block storage", "comment.block support"), palette.inactiveForeground),
+    rule("CSS — Value fallback", ["source.css"], semantic.syntax.css.valueFallback),
+    rule("CSS — Selectors", inStyles("entity.name.tag", "entity.other.attribute-name", "entity.other.namespace-prefix", "entity.name.namespace-prefix"), semantic.syntax.css.selector),
+    rule("CSS — Property names", inStyles("support.type.property-name", "support.type.vendored.property-name"), semantic.syntax.css.property),
+    rule("CSS — Variables, values and map keys", inStyles("variable", "support.constant", "constant.other.color", "support.type.map.key"), semantic.syntax.css.variableAndValue),
+    rule("CSS — Functions and mixins", inStyles("support.function", "entity.name.function"), semantic.syntax.css.functionAndMixin),
+    rule("CSS — At-rules, operators and punctuation", inStyles("keyword", "storage", "punctuation"), semantic.syntax.css.controlAndPunctuation),
+    rule("CSS — Numbers and dimensions", inStyles("constant.numeric", "constant.numeric keyword.other.unit"), semantic.syntax.css.number),
+    rule("CSS — Strings and escapes", inStyles("string", "constant.character.escape"), semantic.syntax.css.string),
+    rule("CSS — Hex color prefix", inStyles("constant.other.color punctuation.definition.constant"), semantic.syntax.css.hexColorPrefix),
+    rule("CSS — Comments", inStyles("comment", "comment.block", "comment.line"), semantic.syntax.css.comment, "italic"),
+    rule("CSS — Comment internals", inStyles("comment.block punctuation", "comment.line punctuation", "comment.block entity", "comment.block variable", "comment.block keyword", "comment.block storage", "comment.block support"), semantic.syntax.css.comment),
     // Tailwind CSS IntelliSense supplies this context; ordinary selectors stay Ancient Bone.
-    rule("Tailwind — Apply utilities", inStyles("meta.at-rule.apply.tailwind entity.other.attribute-name.class"), palette.bone),
+    rule("Tailwind — Apply utilities", inStyles("meta.at-rule.apply.tailwind entity.other.attribute-name.class"), semantic.syntax.tailwind.utility),
     // HTML text has no separate scope. Restrict the fallback to HTML roots, then restore embedded languages.
-    rule("HTML — Text fallback", ["text.html.basic", "text.html.derivative"], palette.paleBone),
-    rule("HTML — Tag names", inHTML("entity.name.tag.html"), palette.ancientBone),
-    rule("HTML — Attributes", inHTML("entity.other.attribute-name.html"), palette.silver, ""),
-    rule("HTML — String values", inHTML("string"), palette.sageAsh),
-    rule("HTML — Punctuation", inHTML("punctuation"), palette.silver),
-    rule("HTML — Text entities", inHTML("constant.character.entity", "constant.character.entity punctuation"), palette.paleBone),
-    rule("HTML — Attribute entities", inHTML("string constant.character.entity", "string constant.character.entity punctuation"), palette.sageAsh),
-    rule("HTML — Comments", inHTML("comment", "comment.block", "comment.block punctuation"), palette.inactiveForeground, "italic"),
-    rule("Code — Identifier fallback", codeLanguages.map(({ root }) => root), palette.bone),
-    rule("Code — Variables, parameters, properties and enum members", inCode("variable", "support.variable", "meta.object-literal.key", "entity.name.label"), palette.bone),
-    rule("Code — Keywords and modifiers", inCode("keyword", "storage"), palette.silver),
-    rule("Code — Types, built-ins, namespaces and enums", inCode("entity.name.type", "support.type", "support.class"), palette.ancientBone),
-    rule("Code — Functions, methods and hooks", inCode("entity.name.function", "entity.name.method", "support.function", "variable.function"), palette.ashRose),
-    rule("Code — Operators and punctuation", inCode("punctuation", "meta.brace"), palette.silver),
-    rule("Code — String and template content", inCode("string.quoted", "string.template", "constant.character.escape"), palette.sageAsh),
-    rule("Code — Quoted object keys", inCode("meta.object-literal.key string.quoted", "meta.object-literal.key constant.character.escape"), palette.bone),
-    rule("Code — Numeric literals and BigInt suffixes", inCode("constant.numeric", "storage.type.numeric.bigint"), palette.dustyCopper),
-    rule("Code — Special values", inCode("constant.language"), palette.silver),
-    rule("Code — Boolean values", inCode("constant.language.boolean"), palette.ashRose),
-    rule("Code — Invalid syntax", inCode("invalid"), palette.blood),
-    rule("Code — Comments", inCode("comment"), palette.inactiveForeground, "italic"),
+    rule("HTML — Text fallback", ["text.html.basic", "text.html.derivative"], semantic.syntax.markup.text),
+    rule("HTML — Tag names", inHTML("entity.name.tag.html"), semantic.syntax.markup.tag),
+    rule("HTML — Attributes", inHTML("entity.other.attribute-name.html"), semantic.syntax.markup.attribute, ""),
+    rule("HTML — String values", inHTML("string"), semantic.syntax.markup.attributeValue),
+    rule("HTML — Punctuation", inHTML("punctuation"), semantic.syntax.markup.punctuation),
+    rule("HTML — Text entities", inHTML("constant.character.entity", "constant.character.entity punctuation"), semantic.syntax.markup.text),
+    rule("HTML — Attribute entities", inHTML("string constant.character.entity", "string constant.character.entity punctuation"), semantic.syntax.markup.attributeValue),
+    rule("HTML — Comments", inHTML("comment", "comment.block", "comment.block punctuation"), semantic.syntax.comment, "italic"),
+    rule("Code — Identifier fallback", codeLanguages.map(({ root }) => root), semantic.syntax.identifierFallback),
+    rule("Code — Variables, parameters, properties and enum members", inCode("variable", "support.variable", "meta.object-literal.key", "entity.name.label"), semantic.syntax.variableLike),
+    rule("Code — Keywords and modifiers", inCode("keyword", "storage"), semantic.syntax.keyword),
+    rule("Code — Types, built-ins, namespaces and enums", inCode("entity.name.type", "support.type", "support.class"), semantic.syntax.type),
+    rule("Code — Functions, methods and hooks", inCode("entity.name.function", "entity.name.method", "support.function", "variable.function"), semantic.syntax.function),
+    rule("Code — Operators and punctuation", inCode("punctuation", "meta.brace"), semantic.syntax.punctuation),
+    rule("Code — String and template content", inCode("string.quoted", "string.template", "constant.character.escape"), semantic.syntax.string),
+    rule("Code — Quoted object keys", inCode("meta.object-literal.key string.quoted", "meta.object-literal.key constant.character.escape"), semantic.syntax.property),
+    rule("Code — Numeric literals and BigInt suffixes", inCode("constant.numeric", "storage.type.numeric.bigint"), semantic.syntax.number),
+    rule("Code — Special values", inCode("constant.language"), semantic.syntax.specialValue),
+    rule("Code — Boolean values", inCode("constant.language.boolean"), semantic.syntax.boolean),
+    rule("Code — Invalid syntax", inCode("invalid"), semantic.syntax.invalid),
+    rule("Code — Comments", inCode("comment"), semantic.syntax.comment, "italic"),
 
     // Give embedded code its identifier fallback, rather than inheriting JSX/string text.
-    rule("Code — Embedded expression fallback", inCode("meta.jsx.children meta.embedded.expression", "string.template meta.embedded.line"), palette.bone),
-    rule("JSX — Tag and component names", inCode("entity.name.tag", "support.class.component"), palette.ancientBone),
-    rule("JSX — Attribute names", inCode("entity.other.attribute-name"), palette.silver),
-    rule("JSX — Text content", inCode("meta.jsx.children"), palette.paleBone),
-    rule("JSX — Entities in text", inCode("meta.jsx.children constant.character.entity", "meta.jsx.children constant.character.entity punctuation.definition.entity"), palette.paleBone),
+    rule("Code — Embedded expression fallback", inCode("meta.jsx.children meta.embedded.expression", "string.template meta.embedded.line"), semantic.syntax.identifierFallback),
+    rule("JSX — Tag and component names", inCode("entity.name.tag", "support.class.component"), semantic.syntax.markup.tag),
+    rule("JSX — Attribute names", inCode("entity.other.attribute-name"), semantic.syntax.markup.attribute),
+    rule("JSX — Text content", inCode("meta.jsx.children"), semantic.syntax.markup.text),
+    rule("JSX — Entities in text", inCode("meta.jsx.children constant.character.entity", "meta.jsx.children constant.character.entity punctuation.definition.entity"), semantic.syntax.markup.text),
 
     // Regex is a string category, not a source of unrelated keyword/number/escape colors.
-    rule("Regex — Pattern", inCode("string.regexp"), palette.sageAsh),
-    rule("Regex — Pattern constructs", inCode("string.regexp keyword", "string.regexp constant", "string.regexp variable", "string.regexp punctuation"), palette.sageAsh),
+    rule("Regex — Pattern", inCode("string.regexp"), semantic.syntax.regexp),
+    rule("Regex — Pattern constructs", inCode("string.regexp keyword", "string.regexp constant", "string.regexp variable", "string.regexp punctuation"), semantic.syntax.regexp),
     rule("Regex — Delimiters and flags", [
       ...inCode("string.regexp punctuation.definition.string"),
       // keyword.other.back-reference.regexp is pattern content, not a flag.
       ...codeLanguages.map(({ root }) => `${root} string.regexp.${root.slice(7)} keyword.other.${root.slice(7)}`),
-    ], palette.silver),
+    ], semantic.syntax.regexpDelimiterAndFlag),
     // Retain the earlier deliberate interface-field colon exception.
     rule("TypeScript — Interface field colons", [
       "source.ts meta.interface.ts > meta.field.declaration.ts > meta.type.annotation.ts > keyword.operator.type.annotation.ts",
       "source.tsx meta.interface.tsx > meta.field.declaration.tsx > meta.type.annotation.tsx > keyword.operator.type.annotation.tsx",
-    ], palette.bone),
+    ], semantic.syntax.interfacePropertySeparator),
 
     // JSONC's root/source scopes extend JSON's names, so one contextual rule covers both.
-    rule("JSON — Fallback and property keys", ["source.json", "source.json support.type.property-name"], palette.bone),
-    rule("JSON — Strings and escapes", ["source.json string", "source.json constant.character.escape"], palette.sageAsh),
-    rule("JSON — Escapes in property keys", ["source.json support.type.property-name constant.character.escape"], palette.bone),
-    rule("JSON — Numbers", ["source.json constant.numeric"], palette.dustyCopper),
+    rule("JSON — Fallback and property keys", ["source.json", "source.json support.type.property-name"], semantic.syntax.json.key),
+    rule("JSON — Strings and escapes", ["source.json string", "source.json constant.character.escape"], semantic.syntax.json.string),
+    rule("JSON — Escapes in property keys", ["source.json support.type.property-name constant.character.escape"], semantic.syntax.json.key),
+    rule("JSON — Numbers", ["source.json constant.numeric"], semantic.syntax.json.number),
     // Stock JSON/JSONC gives true, false and null the SAME scope: cannot split by text.
-    rule("JSON — Shared boolean/null scope", ["source.json constant.language"], palette.silver),
-    rule("JSON — Punctuation", ["source.json punctuation"], palette.silver),
-    rule("JSON — Key quotes", ["source.json punctuation.support.type.property-name"], palette.silver),
-    rule("JSON — Comments", ["source.json comment", "source.json comment.block punctuation", "source.json comment.line punctuation"], palette.inactiveForeground, "italic"),
-    rule("JSON — Invalid syntax", ["source.json invalid"], palette.blood),
+    rule("JSON — Shared boolean/null scope", ["source.json constant.language"], semantic.syntax.json.booleanAndNull),
+    rule("JSON — Punctuation", ["source.json punctuation"], semantic.syntax.json.punctuation),
+    rule("JSON — Key quotes", ["source.json punctuation.support.type.property-name"], semantic.syntax.json.keyQuote),
+    rule("JSON — Comments", ["source.json comment", "source.json comment.block punctuation", "source.json comment.line punctuation"], semantic.syntax.json.comment, "italic"),
+    rule("JSON — Invalid syntax", ["source.json invalid"], semantic.syntax.json.invalid),
 
     // JSDoc/JSX comments may contain tokenized tags and examples; keep them muted.
     rule("Code — Comment internals", inCode(...["comment.block", "comment.line"].flatMap(parent => [
       "keyword", "storage", "punctuation", "entity.name.type", "entity.name.function",
       "entity.name.tag", "entity.other.attribute-name", "support.type", "support.class", "support.function",
       "variable", "constant", "string", "invalid"
-    ].map(scope => `${parent} ${scope}`))), palette.inactiveForeground, "italic"),
-  ],
+    ].map(scope => `${parent} ${scope}`))), semantic.syntax.comment, "italic"),
+  ]),
 };

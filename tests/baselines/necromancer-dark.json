@@ -325,7 +325,7 @@
       "name": "Markdown - Plain",
       "scope": [
         "text.html.markdown",
-        "punctuation.definition.list_item.markdown"
+        "text.html.markdown punctuation.definition.list.begin.markdown"
       ],
       "settings": {
         "foreground": "#D8CBB8"
@@ -334,7 +334,7 @@
     {
       "name": "Markdown - Markup Raw Inline",
       "scope": [
-        "text.html.markdown markup.inline.raw.markdown"
+        "text.html.markdown markup.inline.raw.string.markdown"
       ],
       "settings": {
         "foreground": "#A8B59A"
@@ -343,7 +343,7 @@
     {
       "name": "Markdown - Markup Raw Inline Punctuation",
       "scope": [
-        "text.html.markdown markup.inline.raw.markdown punctuation.definition.raw.markdown"
+        "text.html.markdown markup.inline.raw.string.markdown punctuation.definition.raw.markdown"
       ],
       "settings": {
         "foreground": "#777F86"
@@ -352,8 +352,7 @@
     {
       "name": "Markdown - Heading",
       "scope": [
-        "markdown.heading",
-        "markup.heading | markup.heading entity.name",
+        "text.html.markdown markup.heading.markdown entity.name.section.markdown",
         "markup.heading.markdown punctuation.definition.heading.markdown"
       ],
       "settings": {
@@ -409,7 +408,7 @@
     {
       "name": "Markdown - Blockquote",
       "scope": [
-        "markup.quote punctuation.definition.blockquote.markdown"
+        "text.html.markdown markup.quote.markdown punctuation.definition.quote.begin.markdown"
       ],
       "settings": {
         "foreground": "#777F86"
@@ -481,7 +480,7 @@
     {
       "name": "Markdown - Fenced Bode Block Variable",
       "scope": [
-        "markup.raw.block.fenced.markdown",
+        "text.html.markdown markup.fenced_code.block.markdown",
         "variable.language.fenced.markdown",
         "punctuation.section.class.end"
       ],
@@ -492,7 +491,7 @@
     {
       "name": "Markdown - Fenced Language",
       "scope": [
-        "variable.language.fenced.markdown"
+        "text.html.markdown fenced_code.block.language.markdown"
       ],
       "settings": {
         "foreground": "#777F86"
@@ -1284,6 +1283,307 @@
         "source.js.jsx comment.line constant",
         "source.js.jsx comment.line string",
         "source.js.jsx comment.line invalid"
+      ],
+      "settings": {
+        "foreground": "#777F86",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Markdown embedded — Code — Identifier fallback",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript"
+      ],
+      "settings": {
+        "foreground": "#D8CBB8"
+      }
+    },
+    {
+      "name": "Markdown embedded — Code — Variables, parameters, properties and enum members",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript variable",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript support.variable",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript meta.object-literal.key",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript entity.name.label",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript variable",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript support.variable",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript meta.object-literal.key",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript entity.name.label"
+      ],
+      "settings": {
+        "foreground": "#D8CBB8"
+      }
+    },
+    {
+      "name": "Markdown embedded — Code — Keywords and modifiers",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript keyword",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript storage",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript keyword",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript storage"
+      ],
+      "settings": {
+        "foreground": "#AEB5BA"
+      }
+    },
+    {
+      "name": "Markdown embedded — Code — Types, built-ins, namespaces and enums",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript entity.name.type",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript support.type",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript support.class",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript entity.name.type",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript support.type",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript support.class"
+      ],
+      "settings": {
+        "foreground": "#E0D4C2"
+      }
+    },
+    {
+      "name": "Markdown embedded — Code — Functions, methods and hooks",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript entity.name.function",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript entity.name.method",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript support.function",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript variable.function",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript entity.name.function",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript entity.name.method",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript support.function",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript variable.function"
+      ],
+      "settings": {
+        "foreground": "#C58F96"
+      }
+    },
+    {
+      "name": "Markdown embedded — Code — Operators and punctuation",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript punctuation",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript meta.brace",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript punctuation",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript meta.brace"
+      ],
+      "settings": {
+        "foreground": "#AEB5BA"
+      }
+    },
+    {
+      "name": "Markdown embedded — Code — String and template content",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript string.quoted",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript string.template",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript constant.character.escape",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript string.quoted",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript string.template",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript constant.character.escape"
+      ],
+      "settings": {
+        "foreground": "#A8B59A"
+      }
+    },
+    {
+      "name": "Markdown embedded — Code — Quoted object keys",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript meta.object-literal.key string.quoted.double",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript meta.object-literal.key string.quoted.single",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript meta.object-literal.key constant.character.escape.ts",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript meta.object-literal.key string.quoted.double",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript meta.object-literal.key string.quoted.single",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript meta.object-literal.key constant.character.escape.js"
+      ],
+      "settings": {
+        "foreground": "#D8CBB8"
+      }
+    },
+    {
+      "name": "Markdown embedded — Code — Numeric literals and BigInt suffixes",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript constant.numeric",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript storage.type.numeric.bigint",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript constant.numeric",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript storage.type.numeric.bigint"
+      ],
+      "settings": {
+        "foreground": "#C9A18B"
+      }
+    },
+    {
+      "name": "Markdown embedded — Code — Special values",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript constant.language",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript constant.language"
+      ],
+      "settings": {
+        "foreground": "#AEB5BA"
+      }
+    },
+    {
+      "name": "Markdown embedded — Code — Boolean values",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript constant.language.boolean",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript constant.language.boolean"
+      ],
+      "settings": {
+        "foreground": "#C58F96"
+      }
+    },
+    {
+      "name": "Markdown embedded — Code — Invalid syntax",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript invalid",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript invalid"
+      ],
+      "settings": {
+        "foreground": "#B34752"
+      }
+    },
+    {
+      "name": "Markdown embedded — Code — Comments",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment"
+      ],
+      "settings": {
+        "foreground": "#777F86",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Markdown embedded — Code — Embedded expression fallback",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript meta.jsx.children meta.embedded.expression",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript string.template meta.embedded.line",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript meta.jsx.children meta.embedded.expression",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript string.template meta.embedded.line"
+      ],
+      "settings": {
+        "foreground": "#D8CBB8"
+      }
+    },
+    {
+      "name": "Markdown embedded — Regex — Pattern",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript string.regexp",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript string.regexp"
+      ],
+      "settings": {
+        "foreground": "#A8B59A"
+      }
+    },
+    {
+      "name": "Markdown embedded — Regex — Pattern constructs",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript string.regexp keyword.control",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript string.regexp keyword.operator",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript string.regexp keyword.other",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript string.regexp constant",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript string.regexp variable.other",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript string.regexp punctuation.definition",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript string.regexp keyword.control",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript string.regexp keyword.operator",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript string.regexp keyword.other",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript string.regexp constant",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript string.regexp variable.other",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript string.regexp punctuation.definition"
+      ],
+      "settings": {
+        "foreground": "#A8B59A"
+      }
+    },
+    {
+      "name": "Markdown embedded — Regex — Delimiters and flags",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript string.regexp punctuation.definition.string",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript string.regexp.ts keyword.other.ts",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript string.regexp punctuation.definition.string",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript string.regexp.js keyword.other.js"
+      ],
+      "settings": {
+        "foreground": "#AEB5BA"
+      }
+    },
+    {
+      "name": "Markdown embedded — TypeScript — Interface field colons",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript meta.interface.ts > meta.field.declaration.ts > meta.type.annotation.ts > keyword.operator.type.annotation.ts"
+      ],
+      "settings": {
+        "foreground": "#D8CBB8"
+      }
+    },
+    {
+      "name": "Markdown embedded — Code — Comment internals",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.block keyword.operator",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.block storage.type",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.block punctuation.definition",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.block punctuation.separator",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.block punctuation.whitespace",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.block entity.name.type.instance.jsdoc",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.block entity.name.function",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.block entity.name.tag.inline.jsdoc",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.block entity.other.attribute-name",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.block support.type",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.block support.class",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.block support.function",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.block variable.other",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.block constant.language",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.block constant.other",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.block string",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.block invalid.illegal.syntax.jsdoc",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.line keyword.operator",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.line storage.type",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.line punctuation.definition",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.line punctuation.separator",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.line punctuation.whitespace",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.line entity.name.type.instance.jsdoc",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.line entity.name.function",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.line entity.name.tag.inline.jsdoc",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.line entity.other.attribute-name",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.line support.type",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.line support.class",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.line support.function",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.line variable.other",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.line constant.language",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.line constant.other",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.line string",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript comment.line invalid.illegal.syntax.jsdoc",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.block keyword.operator",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.block storage.type",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.block punctuation.definition",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.block punctuation.separator",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.block punctuation.whitespace",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.block entity.name.type.instance.jsdoc",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.block entity.name.function",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.block entity.name.tag.inline.jsdoc",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.block entity.other.attribute-name",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.block support.type",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.block support.class",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.block support.function",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.block variable.other",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.block constant.language",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.block constant.other",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.block string",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.block invalid.illegal.syntax.jsdoc",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.line keyword.operator",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.line storage.type",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.line punctuation.definition",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.line punctuation.separator",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.line punctuation.whitespace",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.line entity.name.type.instance.jsdoc",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.line entity.name.function",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.line entity.name.tag.inline.jsdoc",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.line entity.other.attribute-name",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.line support.type",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.line support.class",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.line support.function",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.line variable.other",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.line constant.language",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.line constant.other",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.line string",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript comment.line invalid.illegal.syntax.jsdoc"
       ],
       "settings": {
         "foreground": "#777F86",

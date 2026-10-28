@@ -1,64 +1,65 @@
 # Diablo Theme
 
-Четыре темы для VS Code: **Necromancer Dark**, **Necromancer Light**,
-**Paladin Dark** и **Paladin Light**.
+Four themes for VS Code: **Necromancer Dark**, **Necromancer Light**,
+**Paladin Dark**, and **Paladin Light**.
 
-Paladin Dark использует палитру Ivory & Midnight: полуночные поверхности,
-текст цвета слоновой кости, золотые, лавандовые и шалфейные акценты.
-Paladin Light сочетает светлый ivory-фон с тёмным текстом и более глубокими
-оттенками тех же акцентов для читаемой подсветки.
+Paladin Dark uses the Ivory & Midnight palette: midnight surfaces,
+ivory text, and gold, lavender, and sage accents.
+Paladin Light pairs a light ivory background with dark text and deeper
+shades of the same accents for readable syntax highlighting.
 
-Во всех четырёх темах переменные и параметры выделяются акцентным цветом,
-а свойства — основным цветом текста: в `palette.someValue` объект `palette`
-отличается от свойства `someValue`. Правила работают в TS, TSX, JS и JSX
-с семантической подсветкой и без неё.
-Функции и методы используют третий цвет: в Paladin переменные золотые,
-функции лавандовые, свойства цвета основного текста. В Necromancer переменные
-медные, функции розовые в Dark и бордовые в Light.
+In all four themes, variables and parameters use an accent color,
+while properties use the main text color: in `palette.someValue`, the `palette`
+object is visually distinct from the `someValue` property. These rules apply to
+TS, TSX, JS, and JSX, with or without semantic highlighting.
+Functions and methods use a third color: in Paladin, variables are gold,
+functions are lavender, and properties use the main text color. In Necromancer,
+variables are copper, while functions are pink in Dark and burgundy in Light.
 
-Файлы `.env`, `.env.local`, `.env.example` и другие варианты Dotenv также
-используют цвета выбранной темы: имена переменных, значения, `export`,
-подстановки `${NAME}`, escape-последовательности и комментарии.
-Поддерживаются встроенный язык Dotenv (`source.dotenv`) и расширение
-`mikestead.dotenv` (`source.env`). Если файл открыт как Plain Text, выберите
-для него язык **Dotenv / Environment Variables** в строке состояния VS Code.
-Точность подсветки подстановок и числовых значений зависит от грамматики:
-`mikestead.dotenv` не размечает подстановки вне кавычек, а встроенная грамматика
-не выделяет числа и boolean отдельно от остальных значений.
+Files such as `.env`, `.env.local`, `.env.example`, and other Dotenv variants
+also use the selected theme's colors for variable names, values, `export`,
+`${NAME}` substitutions, escape sequences, and comments.
+Both the built-in Dotenv language (`source.dotenv`) and the
+`mikestead.dotenv` extension (`source.env`) are supported. If a file opens as
+Plain Text, select **Dotenv / Environment Variables** in the VS Code status bar.
+The precision of substitution and numeric highlighting depends on the grammar:
+`mikestead.dotenv` does not tokenize unquoted substitutions, while the built-in
+grammar does not distinguish numbers and booleans from other values.
 
-## Генерация тем
+## Theme generation
 
-Для разработки нужен Node.js 22.6 или новее с поддержкой `--experimental-strip-types`.
-Установка зависимостей не требуется.
+Development requires Node.js 22.6 or later with support for `--experimental-strip-types`.
+No dependency installation is required.
 
 ```sh
 npm run build
 ```
 
-Исходники тем находятся в `src/palettes/`. Палитры Paladin задаются в
-`paladin-dark/primitives.ts` и `paladin-light/primitives.ts`, общие роли —
-в `paladin.ts`. Привязки интерфейса и правила подсветки полных тем находятся
-в `src/theme/create-theme.ts`. Подсветка TS, TSX, JS, JSX, JSON, JSONC, CSS, SCSS и HTML использует
-согласованные роли Blood & Bone. Tailwind `@apply` учитывает встроенную CSS
-и установленную Tailwind injection grammar. Пять старых `syntax*` сохранены
-только для diff, значков интерфейса и прозрачного Markdown overlay.
+Theme sources are in `src/palettes/`. The Paladin palettes are defined in
+`paladin-dark/primitives.ts` and `paladin-light/primitives.ts`, with shared roles
+in `paladin.ts`. UI color mappings and syntax highlighting rules for the complete
+themes are in `src/theme/create-theme.ts`. Highlighting for TS, TSX, JS, JSX,
+JSON, JSONC, CSS, SCSS, and HTML uses consistent Blood & Bone roles.
+Tailwind `@apply` supports both the built-in CSS grammar and the installed
+Tailwind injection grammar. The five legacy `syntax*` fields are retained
+only for diffs, UI icons, and the translucent Markdown overlay.
 
-`src/build.ts` генерирует все четыре файла `themes/*-color-theme.json`.
-Изменяйте TypeScript-исходники, затем запускайте сборку и сохраняйте обновлённые
-JSON вместе с исходниками. Повторная сборка перезаписывает JSON.
+`src/build.ts` generates all four `themes/*-color-theme.json` files.
+Edit the TypeScript sources, then run the build and commit the updated
+JSON files alongside the sources. Rebuilding overwrites the JSON files.
 
-Для просмотра запустите конфигурацию **Extension** через F5 и выберите тему
-командой **Preferences: Color Theme** в Extension Development Host.
+To preview a theme, launch the **Extension** configuration with F5 and select
+the theme using **Preferences: Color Theme** in the Extension Development Host.
 
-Расширение использует готовые JSON-файлы; Node.js нужен только для генерации.
-Оформление чата распространяется на встроенные компоненты VS Code и элементы,
-которые используют его цвета темы. Собственный интерфейс сторонних расширений
-может потребовать отдельной поддержки этих цветов.
+The extension uses the generated JSON files; Node.js is only needed to generate them.
+Chat styling applies to built-in VS Code components and elements that use
+VS Code theme colors. Custom interfaces in third-party extensions may need
+separate support for these colors.
 
-Используемые ключи интерфейса описаны в
+The UI color keys used by the themes are documented in the
 [VS Code Theme Color Reference](https://code.visualstudio.com/api/references/theme-color).
 
-## Проверки подсветки
+## Highlighting checks
 
 ```sh
 npm run build:check
@@ -68,30 +69,32 @@ npm run test:identifiers
 npm run test:dotenv
 ```
 
-`npm run build:check` ничего не записывает: сравнивает результат из исходников
-и JSON в `themes/` с независимыми [baseline-файлами](tests/baselines/README.md).
-Сравнение включает все цвета, semantic tokens, порядок TextMate rules/selectors,
-fontStyle и точные байты JSON тем Necromancer. Для Paladin проверяется
-соответствие JSON исходникам. Baseline не обновляется сборкой.
-При миграции архитектуры он должен оставаться неизменным.
+`npm run build:check` does not write any files. It compares the output generated
+from the sources and the JSON files in `themes/` against independent
+[baseline files](tests/baselines/README.md). The comparison covers all colors,
+semantic tokens, TextMate rule and selector order, `fontStyle`, and the exact
+JSON bytes of the Necromancer themes. For Paladin, it checks that the JSON
+matches the sources. The build does not update the baseline.
+The baseline must remain unchanged during architectural migrations.
 
-`npm test` проверяет генерацию, палитру, selectors и конфликтующие дубликаты.
-Также проверяет baseline и способность проверки обнаруживать изменения.
-`npm run test:syntax` проверяет реальные TextMate/Oniguruma и TypeScript semantic
-tokens установленного VS Code на файлах `fixtures/syntax-audit.*`.
-Зависимости не устанавливаются. При нестандартном расположении редактора задайте
-`VSCODE_APP_ROOT` — путь к его каталогу `resources/app` (на macOS —
+`npm test` checks generation, palettes, selectors, and conflicting duplicates.
+It also validates the baseline and verifies that the checks detect changes.
+`npm run test:syntax` checks actual TextMate/Oniguruma tokenization and TypeScript
+semantic tokens from the installed VS Code against `fixtures/syntax-audit.*`.
+No dependencies are installed. If the editor is installed in a nonstandard
+location, set `VSCODE_APP_ROOT` to its `resources/app` directory (on macOS,
 `Visual Studio Code.app/Contents/Resources/app`).
 
-Это автоматические проверки токенизации, а не визуальные тесты окна VS Code.
-`npm run test:identifiers` отдельно проверяет различие переменных, свойств и функций
-на настоящих TextMate-грамматиках и TypeScript semantic tokens для всех тем.
-`npm run test:dotenv` проверяет цвета настоящих Dotenv-токенов во всех темах
-на примерах из `fixtures/syntax-audit.env`. Для проверки `mikestead.dotenv`
-используется уже установленное расширение; нестандартный путь можно задать
-через `VSCODE_DOTENV_ROOT`.
-Результаты аудита, принятые роли и ограничения грамматик описаны в
-[отчёте](docs/syntax-audit.md).
+These are automated tokenization checks, not visual tests of the VS Code window.
+`npm run test:identifiers` separately checks the distinction between variables,
+properties, and functions using real TextMate grammars and TypeScript semantic
+tokens for all themes.
+`npm run test:dotenv` checks the colors of actual Dotenv tokens in all themes
+using examples from `fixtures/syntax-audit.env`. Checks for `mikestead.dotenv`
+use the already installed extension; set `VSCODE_DOTENV_ROOT` if it is installed
+in a nonstandard location.
+Audit results, adopted roles, and grammar limitations are documented in the
+[report](docs/syntax-audit.md).
 
-Миграция CSS/SCSS/HTML/Tailwind, инвентаризация legacy-полей и ограничения:
+For the CSS/SCSS/HTML/Tailwind migration, legacy field inventory, and limitations, see
 [Legacy Palette Migration](docs/legacy-palette-migration.md).

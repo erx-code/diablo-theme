@@ -2,9 +2,17 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { necromancerDark } from '../src/palettes/necromancer-dark.ts';
 import { necromancerLight } from '../src/palettes/necromancer-light.ts';
+import { paladinDark } from '../src/palettes/paladin-dark.ts';
+import { paladinLight } from '../src/palettes/paladin-light.ts';
 import { assertThemeBaseline } from './baseline.ts';
 
 // Deliberately do not import build.ts: it writes files as an import side effect.
+for (const theme of [paladinDark, paladinLight]) {
+  const generated = await readFile(new URL(`../themes/${theme.name}-color-theme.json`, import.meta.url), 'utf8');
+  assert.equal(generated, `${JSON.stringify(theme, null, 2)}\n`, `${theme.name}: generated JSON is stale`);
+  console.log(`${theme.name}: generated JSON matches source output`);
+}
+
 for (const [theme, snapshot] of [
   [necromancerDark, 'necromancer-dark.json'],
   [necromancerLight, 'necromancer-light.json'],

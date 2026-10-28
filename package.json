@@ -7,8 +7,10 @@
   "scripts": {
     "build": "node --experimental-strip-types src/build.ts",
     "build:check": "node --experimental-strip-types tests/build-check.ts",
-    "test": "npm run build && node --experimental-strip-types --test tests/theme.test.ts tests/baseline.test.ts tests/color.test.ts && npm run build:check",
-    "test:syntax": "npm run build && node --experimental-strip-types --test tests/syntax.test.ts"
+    "test": "npm run build && node --experimental-strip-types --test tests/theme.test.ts tests/paladin.test.ts tests/baseline.test.ts tests/color.test.ts && npm run build:check",
+    "test:syntax": "npm run build && node --experimental-strip-types --test tests/syntax.test.ts tests/identifiers.test.ts tests/dotenv.test.ts",
+    "test:dotenv": "npm run build && node --experimental-strip-types --test tests/dotenv.test.ts",
+    "test:identifiers": "npm run build && node --experimental-strip-types --test tests/identifiers.test.ts"
   },
   "engines": {
     "vscode": "^1.140.0"
@@ -27,6 +29,16 @@
         "label": "Necromancer Light",
         "uiTheme": "vs",
         "path": "./themes/Necromancer Light-color-theme.json"
+      },
+      {
+        "label": "Paladin Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Paladin Dark-color-theme.json"
+      },
+      {
+        "label": "Paladin Light",
+        "uiTheme": "vs",
+        "path": "./themes/Paladin Light-color-theme.json"
       }
     ]
   }

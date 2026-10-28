@@ -42,7 +42,7 @@ test('audited syntax uses only the approved palette and scoped, unique selectors
 test('semantic categories preserve the hierarchy for every code language and modifier', () => {
   assert.equal(necromancerDark.semanticHighlighting, true);
   const expected = {
-    variable: palette.bone, parameter: palette.bone, property: palette.bone, enumMember: palette.bone,
+    variable: palette.dustyCopper, parameter: palette.dustyCopper, property: palette.bone, enumMember: palette.bone,
     function: palette.ashRose, method: palette.ashRose, decorator: palette.ashRose,
     type: palette.ancientBone, class: palette.ancientBone, interface: palette.ancientBone,
     enum: palette.ancientBone, namespace: palette.ancientBone, typeParameter: palette.ancientBone,

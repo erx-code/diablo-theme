@@ -16,12 +16,18 @@ test('Color utilities: TypeScript enforces validated RGB/RGBA brands', () => {
   const typesPath = fileURLToPath(new URL('../src/color/types.ts', import.meta.url));
   const alphaPath = fileURLToPath(new URL('../src/color/alpha.ts', import.meta.url));
   const themePath = fileURLToPath(new URL('../src/palettes/necromancer-dark.ts', import.meta.url));
+  const paladinDarkPath = fileURLToPath(new URL('../src/palettes/paladin-dark.ts', import.meta.url));
+  const paladinLightPath = fileURLToPath(new URL('../src/palettes/paladin-light.ts', import.meta.url));
   const contractPath = join(tools.extracted, 'color-contract.ts');
   const contract = `
     import { rgb, rgba, parseColor } from ${JSON.stringify(typesPath)};
     import type { RGB, RGBA, Color } from ${JSON.stringify(typesPath)};
     import { withAlpha } from ${JSON.stringify(alphaPath)};
     import { necromancerDark, gitPalette } from ${JSON.stringify(themePath)};
+    import { paladinDark } from ${JSON.stringify(paladinDarkPath)};
+    import { paladinLight } from ${JSON.stringify(paladinLightPath)};
+    const paladinBackground: RGB = paladinDark.colors['editor.background'];
+    const paladinOverlay: RGBA = paladinLight.colors['diffEditor.insertedTextBackground'];
     const gitOverlay: RGBA = gitPalette.insertedText;
     const shadow: RGBA = necromancerDark.colors['scrollbar.shadow'];
     const opaque: RGB = rgb('#242424');
@@ -280,7 +286,7 @@ test('TypeScript semantic provider: real symbol categories and modifiers in TS, 
   const categories = {
     class: palette.ancientBone, enum: palette.ancientBone, interface: palette.ancientBone,
     namespace: palette.ancientBone, typeParameter: palette.ancientBone, type: palette.ancientBone,
-    parameter: palette.bone, variable: palette.bone, enumMember: palette.bone, property: palette.bone,
+    parameter: palette.dustyCopper, variable: palette.dustyCopper, enumMember: palette.bone, property: palette.bone,
     function: palette.ashRose, method: palette.ashRose,
   };
   const seenTypes = new Set<string>();

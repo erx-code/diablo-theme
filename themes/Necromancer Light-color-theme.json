@@ -12,5 +12,220 @@
     "editor.selectionBackground": "#D8B7B9",
     "editorCursor.foreground": "#912D3B"
   },
-  "tokenColors": []
+  "semanticHighlighting": true,
+  "semanticTokenColors": {
+    "variable:typescript": "#865A40",
+    "parameter:typescript": "#865A40",
+    "property:typescript": "#302D2C",
+    "enumMember:typescript": "#302D2C",
+    "namespace:typescript": "#865A40",
+    "function:typescript": "#912D3B",
+    "method:typescript": "#912D3B",
+    "decorator:typescript": "#912D3B",
+    "variable:typescriptreact": "#865A40",
+    "parameter:typescriptreact": "#865A40",
+    "property:typescriptreact": "#302D2C",
+    "enumMember:typescriptreact": "#302D2C",
+    "namespace:typescriptreact": "#865A40",
+    "function:typescriptreact": "#912D3B",
+    "method:typescriptreact": "#912D3B",
+    "decorator:typescriptreact": "#912D3B",
+    "variable:javascript": "#865A40",
+    "parameter:javascript": "#865A40",
+    "property:javascript": "#302D2C",
+    "enumMember:javascript": "#302D2C",
+    "namespace:javascript": "#865A40",
+    "function:javascript": "#912D3B",
+    "method:javascript": "#912D3B",
+    "decorator:javascript": "#912D3B",
+    "variable:javascriptreact": "#865A40",
+    "parameter:javascriptreact": "#865A40",
+    "property:javascriptreact": "#302D2C",
+    "enumMember:javascriptreact": "#302D2C",
+    "namespace:javascriptreact": "#865A40",
+    "function:javascriptreact": "#912D3B",
+    "method:javascriptreact": "#912D3B",
+    "decorator:javascriptreact": "#912D3B"
+  },
+  "tokenColors": [
+    {
+      "name": "Dotenv — Value fallback",
+      "scope": [
+        "source.dotenv",
+        "source.env"
+      ],
+      "settings": {
+        "foreground": "#526344"
+      }
+    },
+    {
+      "name": "Dotenv — Values and quoted strings",
+      "scope": [
+        "source.dotenv property.value",
+        "source.dotenv string.quoted",
+        "source.env property.value",
+        "source.env string.quoted"
+      ],
+      "settings": {
+        "foreground": "#526344"
+      }
+    },
+    {
+      "name": "Dotenv — Variable names and substitutions",
+      "scope": [
+        "source.dotenv variable",
+        "source.env variable"
+      ],
+      "settings": {
+        "foreground": "#865A40"
+      }
+    },
+    {
+      "name": "Dotenv — Export keyword",
+      "scope": [
+        "source.dotenv keyword.key.export",
+        "source.dotenv keyword.other.env",
+        "source.env keyword.key.export",
+        "source.env keyword.other.env"
+      ],
+      "settings": {
+        "foreground": "#912D3B"
+      }
+    },
+    {
+      "name": "Dotenv — Assignment and interpolation delimiters",
+      "scope": [
+        "source.dotenv keyword.operator.assignment",
+        "source.dotenv keyword.interpolation",
+        "source.dotenv keyword.other.template",
+        "source.dotenv punctuation.definition.variable",
+        "source.dotenv constant.character.escape",
+        "source.env keyword.operator.assignment",
+        "source.env keyword.interpolation",
+        "source.env keyword.other.template",
+        "source.env punctuation.definition.variable",
+        "source.env constant.character.escape"
+      ],
+      "settings": {
+        "foreground": "#68605C"
+      }
+    },
+    {
+      "name": "Dotenv — Numbers",
+      "scope": [
+        "source.dotenv constant.numeric",
+        "source.env constant.numeric"
+      ],
+      "settings": {
+        "foreground": "#865A40"
+      }
+    },
+    {
+      "name": "Dotenv — Boolean and null values",
+      "scope": [
+        "source.dotenv constant.language",
+        "source.env constant.language"
+      ],
+      "settings": {
+        "foreground": "#912D3B"
+      }
+    },
+    {
+      "name": "Dotenv — Comments",
+      "scope": [
+        "source.dotenv comment",
+        "source.dotenv comment punctuation",
+        "source.env comment",
+        "source.env comment punctuation"
+      ],
+      "settings": {
+        "foreground": "#776B65",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Code — Variables and parameters",
+      "scope": [
+        "source.ts variable",
+        "source.ts support.variable",
+        "source.tsx variable",
+        "source.tsx support.variable",
+        "source.js variable",
+        "source.js support.variable",
+        "source.js.jsx variable",
+        "source.js.jsx support.variable"
+      ],
+      "settings": {
+        "foreground": "#865A40"
+      }
+    },
+    {
+      "name": "Code — Properties, keys, enum members and labels",
+      "scope": [
+        "source.ts variable.other.property",
+        "source.ts variable.other.object.property",
+        "source.ts variable.other.constant.property",
+        "source.ts variable.other.constant.object.property",
+        "source.ts variable.object.property",
+        "source.ts support.variable.property",
+        "source.ts variable.other.enummember",
+        "source.ts meta.object-literal.key",
+        "source.ts entity.name.label",
+        "source.tsx variable.other.property",
+        "source.tsx variable.other.object.property",
+        "source.tsx variable.other.constant.property",
+        "source.tsx variable.other.constant.object.property",
+        "source.tsx variable.object.property",
+        "source.tsx support.variable.property",
+        "source.tsx variable.other.enummember",
+        "source.tsx meta.object-literal.key",
+        "source.tsx entity.name.label",
+        "source.js variable.other.property",
+        "source.js variable.other.object.property",
+        "source.js variable.other.constant.property",
+        "source.js variable.other.constant.object.property",
+        "source.js variable.object.property",
+        "source.js support.variable.property",
+        "source.js variable.other.enummember",
+        "source.js meta.object-literal.key",
+        "source.js entity.name.label",
+        "source.js.jsx variable.other.property",
+        "source.js.jsx variable.other.object.property",
+        "source.js.jsx variable.other.constant.property",
+        "source.js.jsx variable.other.constant.object.property",
+        "source.js.jsx variable.object.property",
+        "source.js.jsx support.variable.property",
+        "source.js.jsx variable.other.enummember",
+        "source.js.jsx meta.object-literal.key",
+        "source.js.jsx entity.name.label"
+      ],
+      "settings": {
+        "foreground": "#302D2C"
+      }
+    },
+    {
+      "name": "Code — Functions, methods and hooks",
+      "scope": [
+        "source.ts entity.name.function",
+        "source.ts entity.name.method",
+        "source.ts support.function",
+        "source.ts variable.function",
+        "source.tsx entity.name.function",
+        "source.tsx entity.name.method",
+        "source.tsx support.function",
+        "source.tsx variable.function",
+        "source.js entity.name.function",
+        "source.js entity.name.method",
+        "source.js support.function",
+        "source.js variable.function",
+        "source.js.jsx entity.name.function",
+        "source.js.jsx entity.name.method",
+        "source.js.jsx support.function",
+        "source.js.jsx variable.function"
+      ],
+      "settings": {
+        "foreground": "#912D3B"
+      }
+    }
+  ]
 }

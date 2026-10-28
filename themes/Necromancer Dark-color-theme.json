@@ -212,8 +212,8 @@
   },
   "semanticHighlighting": true,
   "semanticTokenColors": {
-    "variable:typescript": "#D5C4BB",
-    "parameter:typescript": "#D5C4BB",
+    "variable:typescript": "#C39A85",
+    "parameter:typescript": "#C39A85",
     "property:typescript": "#D5C4BB",
     "enumMember:typescript": "#D5C4BB",
     "function:typescript": "#D16A78",
@@ -223,7 +223,7 @@
     "class:typescript": "#A93446",
     "interface:typescript": "#A93446",
     "enum:typescript": "#A93446",
-    "namespace:typescript": "#D16A78",
+    "namespace:typescript": "#C39A85",
     "typeParameter:typescript": "#E4D1C5",
     "keyword:typescript": "#B4ABB0",
     "operator:typescript": "#B4ABB0",
@@ -232,8 +232,8 @@
     "regexp:typescript": "#9BA78F",
     "number:typescript": "#C39A85",
     "comment:typescript": "#82777B",
-    "variable:typescriptreact": "#D5C4BB",
-    "parameter:typescriptreact": "#D5C4BB",
+    "variable:typescriptreact": "#C39A85",
+    "parameter:typescriptreact": "#C39A85",
     "property:typescriptreact": "#D5C4BB",
     "enumMember:typescriptreact": "#D5C4BB",
     "function:typescriptreact": "#D16A78",
@@ -243,7 +243,7 @@
     "class:typescriptreact": "#A93446",
     "interface:typescriptreact": "#A93446",
     "enum:typescriptreact": "#A93446",
-    "namespace:typescriptreact": "#D16A78",
+    "namespace:typescriptreact": "#C39A85",
     "typeParameter:typescriptreact": "#E4D1C5",
     "keyword:typescriptreact": "#B4ABB0",
     "operator:typescriptreact": "#B4ABB0",
@@ -252,8 +252,8 @@
     "regexp:typescriptreact": "#9BA78F",
     "number:typescriptreact": "#C39A85",
     "comment:typescriptreact": "#82777B",
-    "variable:javascript": "#D5C4BB",
-    "parameter:javascript": "#D5C4BB",
+    "variable:javascript": "#C39A85",
+    "parameter:javascript": "#C39A85",
     "property:javascript": "#D5C4BB",
     "enumMember:javascript": "#D5C4BB",
     "function:javascript": "#D16A78",
@@ -263,7 +263,7 @@
     "class:javascript": "#A93446",
     "interface:javascript": "#A93446",
     "enum:javascript": "#A93446",
-    "namespace:javascript": "#D16A78",
+    "namespace:javascript": "#C39A85",
     "typeParameter:javascript": "#E4D1C5",
     "keyword:javascript": "#B4ABB0",
     "operator:javascript": "#B4ABB0",
@@ -272,8 +272,8 @@
     "regexp:javascript": "#9BA78F",
     "number:javascript": "#C39A85",
     "comment:javascript": "#82777B",
-    "variable:javascriptreact": "#D5C4BB",
-    "parameter:javascriptreact": "#D5C4BB",
+    "variable:javascriptreact": "#C39A85",
+    "parameter:javascriptreact": "#C39A85",
     "property:javascriptreact": "#D5C4BB",
     "enumMember:javascriptreact": "#D5C4BB",
     "function:javascriptreact": "#D16A78",
@@ -283,7 +283,7 @@
     "class:javascriptreact": "#A93446",
     "interface:javascriptreact": "#A93446",
     "enum:javascriptreact": "#A93446",
-    "namespace:javascriptreact": "#D16A78",
+    "namespace:javascriptreact": "#C39A85",
     "typeParameter:javascriptreact": "#E4D1C5",
     "keyword:javascriptreact": "#B4ABB0",
     "operator:javascriptreact": "#B4ABB0",
@@ -514,6 +514,101 @@
       ],
       "settings": {
         "foreground": "#D5C4BB"
+      }
+    },
+    {
+      "name": "Dotenv — Value fallback",
+      "scope": [
+        "source.dotenv",
+        "source.env"
+      ],
+      "settings": {
+        "foreground": "#9BA78F"
+      }
+    },
+    {
+      "name": "Dotenv — Values and quoted strings",
+      "scope": [
+        "source.dotenv property.value",
+        "source.dotenv string.quoted",
+        "source.env property.value",
+        "source.env string.quoted"
+      ],
+      "settings": {
+        "foreground": "#9BA78F"
+      }
+    },
+    {
+      "name": "Dotenv — Variable names and substitutions",
+      "scope": [
+        "source.dotenv variable",
+        "source.env variable"
+      ],
+      "settings": {
+        "foreground": "#C39A85"
+      }
+    },
+    {
+      "name": "Dotenv — Export keyword",
+      "scope": [
+        "source.dotenv keyword.key.export",
+        "source.dotenv keyword.other.env",
+        "source.env keyword.key.export",
+        "source.env keyword.other.env"
+      ],
+      "settings": {
+        "foreground": "#B4ABB0"
+      }
+    },
+    {
+      "name": "Dotenv — Assignment and interpolation delimiters",
+      "scope": [
+        "source.dotenv keyword.operator.assignment",
+        "source.dotenv keyword.interpolation",
+        "source.dotenv keyword.other.template",
+        "source.dotenv punctuation.definition.variable",
+        "source.dotenv constant.character.escape",
+        "source.env keyword.operator.assignment",
+        "source.env keyword.interpolation",
+        "source.env keyword.other.template",
+        "source.env punctuation.definition.variable",
+        "source.env constant.character.escape"
+      ],
+      "settings": {
+        "foreground": "#B4ABB0"
+      }
+    },
+    {
+      "name": "Dotenv — Numbers",
+      "scope": [
+        "source.dotenv constant.numeric",
+        "source.env constant.numeric"
+      ],
+      "settings": {
+        "foreground": "#C39A85"
+      }
+    },
+    {
+      "name": "Dotenv — Boolean and null values",
+      "scope": [
+        "source.dotenv constant.language",
+        "source.env constant.language"
+      ],
+      "settings": {
+        "foreground": "#D16A78"
+      }
+    },
+    {
+      "name": "Dotenv — Comments",
+      "scope": [
+        "source.dotenv comment",
+        "source.dotenv comment punctuation",
+        "source.env comment",
+        "source.env comment punctuation"
+      ],
+      "settings": {
+        "foreground": "#82777B",
+        "fontStyle": "italic"
       }
     },
     {
@@ -748,22 +843,58 @@
       }
     },
     {
-      "name": "Code — Variables, parameters, properties and enum members",
+      "name": "Code — Variables and parameters",
       "scope": [
         "source.ts variable",
         "source.ts support.variable",
-        "source.ts meta.object-literal.key",
-        "source.ts entity.name.label",
         "source.tsx variable",
         "source.tsx support.variable",
-        "source.tsx meta.object-literal.key",
-        "source.tsx entity.name.label",
         "source.js variable",
         "source.js support.variable",
+        "source.js.jsx variable",
+        "source.js.jsx support.variable"
+      ],
+      "settings": {
+        "foreground": "#C39A85"
+      }
+    },
+    {
+      "name": "Code — Properties, keys, enum members and labels",
+      "scope": [
+        "source.ts variable.other.property",
+        "source.ts variable.other.object.property",
+        "source.ts variable.other.constant.property",
+        "source.ts variable.other.constant.object.property",
+        "source.ts variable.object.property",
+        "source.ts support.variable.property",
+        "source.ts variable.other.enummember",
+        "source.ts meta.object-literal.key",
+        "source.ts entity.name.label",
+        "source.tsx variable.other.property",
+        "source.tsx variable.other.object.property",
+        "source.tsx variable.other.constant.property",
+        "source.tsx variable.other.constant.object.property",
+        "source.tsx variable.object.property",
+        "source.tsx support.variable.property",
+        "source.tsx variable.other.enummember",
+        "source.tsx meta.object-literal.key",
+        "source.tsx entity.name.label",
+        "source.js variable.other.property",
+        "source.js variable.other.object.property",
+        "source.js variable.other.constant.property",
+        "source.js variable.other.constant.object.property",
+        "source.js variable.object.property",
+        "source.js support.variable.property",
+        "source.js variable.other.enummember",
         "source.js meta.object-literal.key",
         "source.js entity.name.label",
-        "source.js.jsx variable",
-        "source.js.jsx support.variable",
+        "source.js.jsx variable.other.property",
+        "source.js.jsx variable.other.object.property",
+        "source.js.jsx variable.other.constant.property",
+        "source.js.jsx variable.other.constant.object.property",
+        "source.js.jsx variable.object.property",
+        "source.js.jsx support.variable.property",
+        "source.js.jsx variable.other.enummember",
         "source.js.jsx meta.object-literal.key",
         "source.js.jsx entity.name.label"
       ],
@@ -1300,14 +1431,36 @@
       }
     },
     {
-      "name": "Markdown embedded — Code — Variables, parameters, properties and enum members",
+      "name": "Markdown embedded — Code — Variables and parameters",
       "scope": [
         "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript variable",
         "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript support.variable",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript variable",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript support.variable"
+      ],
+      "settings": {
+        "foreground": "#C39A85"
+      }
+    },
+    {
+      "name": "Markdown embedded — Code — Properties, keys, enum members and labels",
+      "scope": [
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript variable.other.property",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript variable.other.object.property",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript variable.other.constant.property",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript variable.other.constant.object.property",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript variable.object.property",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript support.variable.property",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript variable.other.enummember",
         "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript meta.object-literal.key",
         "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.typescript entity.name.label",
-        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript variable",
-        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript support.variable",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript variable.other.property",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript variable.other.object.property",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript variable.other.constant.property",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript variable.other.constant.object.property",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript variable.object.property",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript support.variable.property",
+        "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript variable.other.enummember",
         "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript meta.object-literal.key",
         "text.html.markdown markup.fenced_code.block.markdown meta.embedded.block.javascript entity.name.label"
       ],
